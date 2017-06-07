@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="移动web开发," />
 
 
 
@@ -84,15 +84,28 @@
 
 
 
-<meta name="description" content="多一点真诚，少一点套路">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Silence Lu's Blog">
-<meta property="og:url" content="http://milolu.github.io/archives/2017/06/index.html">
+<meta name="description" content="JS调用APP
+注：移动页面需要进行响应式配置
+
+
+使用1234567891011121314151617181920212223/*// android还是ios判断var isAndroid = u.indexOf(&apos;Android&apos;) &amp;gt; -1 || u.indexOf(&apos;Adr&apos;) &amp;gt; -1; //android终端var isiOS = !!u.match(/\(i[^;]+">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS打开APP">
+<meta property="og:url" content="http://milolu.github.io/2017/05/07/170507 js打开app/index.html">
 <meta property="og:site_name" content="Silence Lu's Blog">
-<meta property="og:description" content="多一点真诚，少一点套路">
+<meta property="og:description" content="JS调用APP
+注：移动页面需要进行响应式配置
+
+
+使用1234567891011121314151617181920212223/*// android还是ios判断var isAndroid = u.indexOf(&apos;Android&apos;) &amp;gt; -1 || u.indexOf(&apos;Adr&apos;) &amp;gt; -1; //android终端var isiOS = !!u.match(/\(i[^;]+">
+<meta property="og:updated_time" content="2017-06-07T11:37:44.162Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Silence Lu's Blog">
-<meta name="twitter:description" content="多一点真诚，少一点套路">
+<meta name="twitter:title" content="JS打开APP">
+<meta name="twitter:description" content="JS调用APP
+注：移动页面需要进行响应式配置
+
+
+使用1234567891011121314151617181920212223/*// android还是ios判断var isAndroid = u.indexOf(&apos;Android&apos;) &amp;gt; -1 || u.indexOf(&apos;Adr&apos;) &amp;gt; -1; //android终端var isiOS = !!u.match(/\(i[^;]+">
 
 
 
@@ -110,7 +123,7 @@
   };
 </script>
 
-  <title> 归档 | Silence Lu's Blog </title>
+  <title> JS打开APP | Silence Lu's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -141,7 +154,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  page-archive  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -229,66 +242,131 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 14 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
 
-      
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                JS打开APP
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-05-07T19:21:15+08:00" content="2017-05-07">
+              2017-05-07
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
       
 
       
+        <h1 id="JS调用APP"><a href="#JS调用APP" class="headerlink" title="JS调用APP"></a>JS调用APP</h1><blockquote>
+<p>注：移动页面需要进行响应式配置</p>
+</blockquote>
+<ul>
+<li>使用<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line">// android还是ios判断</div><div class="line">var isAndroid = u.indexOf('Android') &gt; -1 || u.indexOf('Adr') &gt; -1; //android终端</div><div class="line">var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端</div><div class="line">// html</div><div class="line">&lt;a id='download'&gt;下载&lt;/a&gt;</div><div class="line">// js</div><div class="line">$('#dowload').on('click', function()&#123;</div><div class="line">  let ifr = document.createElement('iframe');</div><div class="line">  ifr.src = 'weixin://http://weixin.qq.com'; // 配置app协议 此处为微信的示例</div><div class="line">  ifr.style.display = 'none';</div><div class="line">  document.body.appendChild(ifr);</div><div class="line">  window.setTimeout(function() &#123;</div><div class="line">    document.body.removeChild(ifr);</div><div class="line">    // 打开失败的情况下跳转下载链接</div><div class="line">    if(isiOS)&#123;</div><div class="line">      window.location = 'http://ios下载地址';</div><div class="line">    &#125;</div><div class="line">    if(isAndroid)&#123;</div><div class="line">      window.location = 'http://android下载地址';</div><div class="line">    &#125;</div><div class="line">  &#125;, 1000);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/移动web开发/" rel="tag">#移动web开发</a>
+          
         </div>
       
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/08/170408 响应式布局的三种方式/" rel="next" title="响应式布局的三种方式">
+                <i class="fa fa-chevron-left"></i> 响应式布局的三种方式
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/24/170524 Vue select组件编写/" rel="prev" title="Vue select组件编写">
+                Vue select组件编写 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/06/07/170603 js打开app/" itemprop="url">
-              
-                <span itemprop="name">JS打开APP</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-06-07T19:21:15+08:00"
-              content="2017-06-07" >
-          06-07
-        </time>
-      </div>
-
-    </header>
+      
+    </footer>
   </article>
 
 
 
-    
-
-  </section>
-
-  
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -296,6 +374,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -315,8 +397,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
@@ -327,7 +418,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">15</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -337,7 +428,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -388,6 +479,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JS调用APP"><span class="nav-number">1.</span> <span class="nav-text">JS调用APP</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -484,11 +586,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
 
 
   
