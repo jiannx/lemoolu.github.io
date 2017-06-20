@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="web," />
+  <meta name="keywords" content="移动web开发," />
 
 
 
@@ -84,22 +84,37 @@
 
 
 
-<meta name="description" content="最近帮朋友做个小网站，刚开始用angular+bootstrap做前端，angular入门不简单，但是熟悉了之后就不想在使用jq来做页面了。
-憋死憋活终于把网站初稿做出来了，然后朋友说angular的SEO实在不行…..其实做之前就知道有这问题，当初提出的办法是做一些静态的引导页面或者帮助页面，然而现在觉得这样做不太靠谱，继续coding……
-思考很久后觉得可以在中间架一层node，然后各种问度娘">
+<meta name="description" content="背景
+更贴近 ES 规范。除了 Flow 的类型声明之外，其他都是标准的 ES
+用 babel-plugin-transform-flow-strip-types 转一下，就得到符合规范的 ES
+
+目前框架使用情况
+React: FlowVue: FlowAngular 2.0: TypeScript
+
+安装123456789101112131415161718192021222324252627">
 <meta property="og:type" content="article">
-<meta property="og:title" content="对于web MVC的一些个人理解">
-<meta property="og:url" content="http://milolu.github.io/2015/08/11/150811 对于web MVC的一些个人理解/index.html">
+<meta property="og:title" content="JS静态代码检查框架Flow">
+<meta property="og:url" content="http://milolu.github.io/2017/06/20/170620 Flow JS静态类型检测/index.html">
 <meta property="og:site_name" content="Silence Lu's Blog">
-<meta property="og:description" content="最近帮朋友做个小网站，刚开始用angular+bootstrap做前端，angular入门不简单，但是熟悉了之后就不想在使用jq来做页面了。
-憋死憋活终于把网站初稿做出来了，然后朋友说angular的SEO实在不行…..其实做之前就知道有这问题，当初提出的办法是做一些静态的引导页面或者帮助页面，然而现在觉得这样做不太靠谱，继续coding……
-思考很久后觉得可以在中间架一层node，然后各种问度娘">
-<meta property="og:updated_time" content="2016-08-12T08:33:38.432Z">
+<meta property="og:description" content="背景
+更贴近 ES 规范。除了 Flow 的类型声明之外，其他都是标准的 ES
+用 babel-plugin-transform-flow-strip-types 转一下，就得到符合规范的 ES
+
+目前框架使用情况
+React: FlowVue: FlowAngular 2.0: TypeScript
+
+安装123456789101112131415161718192021222324252627">
+<meta property="og:updated_time" content="2017-06-20T11:41:34.388Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="对于web MVC的一些个人理解">
-<meta name="twitter:description" content="最近帮朋友做个小网站，刚开始用angular+bootstrap做前端，angular入门不简单，但是熟悉了之后就不想在使用jq来做页面了。
-憋死憋活终于把网站初稿做出来了，然后朋友说angular的SEO实在不行…..其实做之前就知道有这问题，当初提出的办法是做一些静态的引导页面或者帮助页面，然而现在觉得这样做不太靠谱，继续coding……
-思考很久后觉得可以在中间架一层node，然后各种问度娘">
+<meta name="twitter:title" content="JS静态代码检查框架Flow">
+<meta name="twitter:description" content="背景
+更贴近 ES 规范。除了 Flow 的类型声明之外，其他都是标准的 ES
+用 babel-plugin-transform-flow-strip-types 转一下，就得到符合规范的 ES
+
+目前框架使用情况
+React: FlowVue: FlowAngular 2.0: TypeScript
+
+安装123456789101112131415161718192021222324252627">
 
 
 
@@ -117,7 +132,7 @@
   };
 </script>
 
-  <title> 对于web MVC的一些个人理解 | Silence Lu's Blog </title>
+  <title> JS静态代码检查框架Flow | Silence Lu's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -257,7 +272,7 @@
             
             
               
-                对于web MVC的一些个人理解
+                JS静态代码检查框架Flow
               
             
           </h1>
@@ -269,8 +284,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-08-11T23:03:35+08:00" content="2015-08-11">
-              2015-08-11
+            <time itemprop="dateCreated" datetime="2017-06-20T16:50:00+08:00" content="2017-06-20">
+              2017-06-20
             </time>
           </span>
 
@@ -297,31 +312,25 @@
       
 
       
-        <p>最近帮朋友做个小网站，刚开始用angular+bootstrap做前端，angular入门不简单，但是熟悉了之后就不想在使用jq来做页面了。</p>
-<p>憋死憋活终于把网站初稿做出来了，然后朋友说angular的SEO实在不行…..其实做之前就知道有这问题，当初提出的办法是做一些静态的引导页面或者帮助页面，然而现在觉得这样做不太靠谱，继续coding……</p>
-<p>思考很久后觉得可以在中间架一层node，然后各种问度娘，发现淘宝已经有这个思路了</p>
-<p><a href="http://ued.taobao.org/blog/2014/04/full-stack-development-with-nodejs/" target="_blank" rel="external">http://ued.taobao.org/blog/2014/04/full-stack-development-with-nodejs/</a></p>
-<p>服务器上同时跑tomcat和node，页面请求过来的时候node这边向java后台获取数据生成页面返回给浏览器，盗用下淘宝的图</p>
-<p>之前的架构</p>
-<p>java：负责提供接口数据</p>
-<p>angular：负责路由及页面生成</p>
-<p>现在的结构：</p>
-<p>java：负责提供接口数据</p>
-<p>express：页面路由由负责</p>
-<p>bootstrap：css框架（响应式栅格布局）</p>
-<p>ejs：模板引擎</p>
-<p>angular：后台管理页面（部分不需要SEO的直接用angular了）</p>
-<p>node：页面生成</p>
-<p>node这边向java获取数据，页面ajax获取数据的时由node做一下代理到java。</p>
-<p>到了这个位置，只需要定义一套node，java，浏览器端通用的api规则就可以了，原本想自己写一套，看着看着又发现了点好东西，<a href="https://github.com/carlisliu/modelproxy" target="_blank" rel="external">https://github.com/carlisliu/modelproxy</a> 淘宝已经有套现成的了，直接拿来用就可以了（可能需要根据自己需求改下源码，我把所有传输格式改成了json）</p>
-<p>当请求测试成功后，感觉一下子很完美了</p>
-<p>但是图片上传会涉及跨域的问题，node 80端口这边无法请求到java 8080端口的文件，各种度娘后的解决方案是：使用iframe新建一个网页向后台调用请求，后台生成URL重定向到80端口下的一个静态网页，这个URL中添加前台需要的返回数据，由静态网页中的脚本解析URL并且调用父网页的函数。大致是这个思路，讲的太乱了….可以看下面的链接</p>
-<p><a href="http://wengzhijuan12.blog.163.com/blog/static/3622414520138261584489/" target="_blank" rel="external">http://wengzhijuan12.blog.163.com/blog/static/3622414520138261584489/</a></p>
-<p>终于折腾完了，这是文件结构，基本以express为标准</p>
-<p>网站雏形也出来了：www.lifejx.com（别乱戳，会蹦掉的= =）</p>
-<p>说了那么多，折腾那么久，其实就是因为后台java是定死的，而我又不想写jsp什么的，于是就是各种折腾….</p>
-<p>个人理解的前段应该是：负责路由及展示出来的元素，后台只负责提供数据接口（angular），这样子就是会导致前台的工作量不断的加大。</p>
-<p>入前端没多久，觉得有什么问题可以讨论下~轻喷…</p>
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><ol>
+<li>更贴近 ES 规范。除了 Flow 的类型声明之外，其他都是标准的 ES</li>
+<li>用 babel-plugin-transform-flow-strip-types 转一下，就得到符合规范的 ES</li>
+</ol>
+<h2 id="目前框架使用情况"><a href="#目前框架使用情况" class="headerlink" title="目前框架使用情况"></a>目前框架使用情况</h2><blockquote>
+<p>React: Flow<br>Vue: Flow<br>Angular 2.0: TypeScript</p>
+</blockquote>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">// babel转换插件</div><div class="line">npm i --save-dev babel-eslint</div><div class="line">npm i --save-dev babel-preset-flow</div><div class="line"></div><div class="line">// eslint支持</div><div class="line">npm i --save-dev eslint-plugin-flowtype</div><div class="line"></div><div class="line">// .eslintrc添加以下配置</div><div class="line">&#123;</div><div class="line">  &quot;extends&quot;: [</div><div class="line">    &quot;airbnb&quot;,</div><div class="line">    &quot;plugin:flowtype/recommended&quot;</div><div class="line">  ],</div><div class="line">  &quot;parser&quot;: &quot;babel-eslint&quot;,</div><div class="line">  &quot;plugins&quot;: [</div><div class="line">    &quot;flowtype&quot;</div><div class="line">  ]</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 添加flow-bin</div><div class="line">npm install --save-dev flow-bin</div><div class="line"></div><div class="line">//在package中添加命令</div><div class="line">&quot;scripts&quot;: &#123;</div><div class="line">  &quot;flow&quot;: &quot;flow&quot;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 配置 .flowconfig</div><div class="line">npm run flow init</div><div class="line"></div><div class="line">// .flowconfig文件</div><div class="line">[ignore]</div><div class="line">.*/node_modules/.*</div><div class="line">.*/test/.*</div><div class="line">.*/build/.*</div><div class="line">.*/static/.*</div><div class="line">.*/vendor/.*</div><div class="line">[include]</div><div class="line">[libs]</div><div class="line">[options]</div><div class="line"></div><div class="line">// 执行命令运行</div><div class="line">npm run flow</div></pre></td></tr></table></figure>
+<h2 id="QA"><a href="#QA" class="headerlink" title="QA"></a>QA</h2><ol>
+<li>Required module not found<blockquote>
+<p>安装 flow-typed 或者配置<br>[options]<br>module.name_mapper=’^.*’ -&gt; ‘&lt;PROJECT_ROOT&gt;/modulesStub.js’ <a href="https://flow.org/en/docs/config/options/#toc-module-name-mapper-regex-string" target="_blank" rel="external">使用正则匹配替换 import中字符串</a><br>modulesStub.js<br>export default {};</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><ul>
+<li><a href="">Flow官网</a></li>
+<li><a href="https://www.zhihu.com/question/46397274" target="_blank" rel="external">为什么Vue使用Flow</a></li>
+<li><a href="https://github.com/gajus/eslint-plugin-flowtype" target="_blank" rel="external">eslint-plugin-flowtype 规则描述</a></li>
+</ul>
 
       
     </div>
@@ -343,7 +352,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/web/" rel="tag">#web</a>
+            <a href="/tags/移动web开发/" rel="tag">#移动web开发</a>
           
         </div>
       
@@ -352,17 +361,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/02/10/150210 CSS之Position详解/" rel="next" title="CSS之Position详解">
-                <i class="fa fa-chevron-left"></i> CSS之Position详解
+              <a href="/2017/05/25/170525 Vue 弹窗组件编写/" rel="next" title="Vue 弹窗组件编写">
+                <i class="fa fa-chevron-left"></i> Vue 弹窗组件编写
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/07/160407 parse-eval-observe-watch如何区分/" rel="prev" title="$parse,$eval,$observe,$watch如何区分">
-                $parse,$eval,$observe,$watch如何区分 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -498,7 +503,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目前框架使用情况"><span class="nav-number">2.</span> <span class="nav-text">目前框架使用情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">3.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#QA"><span class="nav-number">4.</span> <span class="nav-text">QA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关链接"><span class="nav-number">5.</span> <span class="nav-text">相关链接</span></a></li></ol></div>
             
           </div>
         </section>

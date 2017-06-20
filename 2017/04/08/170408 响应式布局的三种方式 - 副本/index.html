@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="web," />
+  <meta name="keywords" content="移动web开发," />
 
 
 
@@ -84,22 +84,25 @@
 
 
 
-<meta name="description" content="最近帮朋友做个小网站，刚开始用angular+bootstrap做前端，angular入门不简单，但是熟悉了之后就不想在使用jq来做页面了。
-憋死憋活终于把网站初稿做出来了，然后朋友说angular的SEO实在不行…..其实做之前就知道有这问题，当初提出的办法是做一些静态的引导页面或者帮助页面，然而现在觉得这样做不太靠谱，继续coding……
-思考很久后觉得可以在中间架一层node，然后各种问度娘">
+<meta name="description" content="响应式布局的三种方式流布局
+  流布局,宽度使用百分比值,子元素使用float或者百分比布局。或者flex布局适用范围：适用于特定目标机型
+
+1234567891011.div &amp;#123;  width:100%; height:100px;&amp;#125;.child &amp;#123;  width: 50%;  float: left;&amp;#125;.child &amp;#123;  width:50%;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="对于web MVC的一些个人理解">
-<meta property="og:url" content="http://milolu.github.io/2015/08/11/150811 对于web MVC的一些个人理解/index.html">
+<meta property="og:title" content="响应式布局的三种方式">
+<meta property="og:url" content="http://milolu.github.io/2017/04/08/170408 响应式布局的三种方式 - 副本/index.html">
 <meta property="og:site_name" content="Silence Lu's Blog">
-<meta property="og:description" content="最近帮朋友做个小网站，刚开始用angular+bootstrap做前端，angular入门不简单，但是熟悉了之后就不想在使用jq来做页面了。
-憋死憋活终于把网站初稿做出来了，然后朋友说angular的SEO实在不行…..其实做之前就知道有这问题，当初提出的办法是做一些静态的引导页面或者帮助页面，然而现在觉得这样做不太靠谱，继续coding……
-思考很久后觉得可以在中间架一层node，然后各种问度娘">
-<meta property="og:updated_time" content="2016-08-12T08:33:38.432Z">
+<meta property="og:description" content="响应式布局的三种方式流布局
+  流布局,宽度使用百分比值,子元素使用float或者百分比布局。或者flex布局适用范围：适用于特定目标机型
+
+1234567891011.div &amp;#123;  width:100%; height:100px;&amp;#125;.child &amp;#123;  width: 50%;  float: left;&amp;#125;.child &amp;#123;  width:50%;">
+<meta property="og:updated_time" content="2017-06-07T12:16:29.135Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="对于web MVC的一些个人理解">
-<meta name="twitter:description" content="最近帮朋友做个小网站，刚开始用angular+bootstrap做前端，angular入门不简单，但是熟悉了之后就不想在使用jq来做页面了。
-憋死憋活终于把网站初稿做出来了，然后朋友说angular的SEO实在不行…..其实做之前就知道有这问题，当初提出的办法是做一些静态的引导页面或者帮助页面，然而现在觉得这样做不太靠谱，继续coding……
-思考很久后觉得可以在中间架一层node，然后各种问度娘">
+<meta name="twitter:title" content="响应式布局的三种方式">
+<meta name="twitter:description" content="响应式布局的三种方式流布局
+  流布局,宽度使用百分比值,子元素使用float或者百分比布局。或者flex布局适用范围：适用于特定目标机型
+
+1234567891011.div &amp;#123;  width:100%; height:100px;&amp;#125;.child &amp;#123;  width: 50%;  float: left;&amp;#125;.child &amp;#123;  width:50%;">
 
 
 
@@ -117,7 +120,7 @@
   };
 </script>
 
-  <title> 对于web MVC的一些个人理解 | Silence Lu's Blog </title>
+  <title> 响应式布局的三种方式 | Silence Lu's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -257,7 +260,7 @@
             
             
               
-                对于web MVC的一些个人理解
+                响应式布局的三种方式
               
             
           </h1>
@@ -269,8 +272,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-08-11T23:03:35+08:00" content="2015-08-11">
-              2015-08-11
+            <time itemprop="dateCreated" datetime="2017-04-08T19:21:15+08:00" content="2017-04-08">
+              2017-04-08
             </time>
           </span>
 
@@ -297,31 +300,18 @@
       
 
       
-        <p>最近帮朋友做个小网站，刚开始用angular+bootstrap做前端，angular入门不简单，但是熟悉了之后就不想在使用jq来做页面了。</p>
-<p>憋死憋活终于把网站初稿做出来了，然后朋友说angular的SEO实在不行…..其实做之前就知道有这问题，当初提出的办法是做一些静态的引导页面或者帮助页面，然而现在觉得这样做不太靠谱，继续coding……</p>
-<p>思考很久后觉得可以在中间架一层node，然后各种问度娘，发现淘宝已经有这个思路了</p>
-<p><a href="http://ued.taobao.org/blog/2014/04/full-stack-development-with-nodejs/" target="_blank" rel="external">http://ued.taobao.org/blog/2014/04/full-stack-development-with-nodejs/</a></p>
-<p>服务器上同时跑tomcat和node，页面请求过来的时候node这边向java后台获取数据生成页面返回给浏览器，盗用下淘宝的图</p>
-<p>之前的架构</p>
-<p>java：负责提供接口数据</p>
-<p>angular：负责路由及页面生成</p>
-<p>现在的结构：</p>
-<p>java：负责提供接口数据</p>
-<p>express：页面路由由负责</p>
-<p>bootstrap：css框架（响应式栅格布局）</p>
-<p>ejs：模板引擎</p>
-<p>angular：后台管理页面（部分不需要SEO的直接用angular了）</p>
-<p>node：页面生成</p>
-<p>node这边向java获取数据，页面ajax获取数据的时由node做一下代理到java。</p>
-<p>到了这个位置，只需要定义一套node，java，浏览器端通用的api规则就可以了，原本想自己写一套，看着看着又发现了点好东西，<a href="https://github.com/carlisliu/modelproxy" target="_blank" rel="external">https://github.com/carlisliu/modelproxy</a> 淘宝已经有套现成的了，直接拿来用就可以了（可能需要根据自己需求改下源码，我把所有传输格式改成了json）</p>
-<p>当请求测试成功后，感觉一下子很完美了</p>
-<p>但是图片上传会涉及跨域的问题，node 80端口这边无法请求到java 8080端口的文件，各种度娘后的解决方案是：使用iframe新建一个网页向后台调用请求，后台生成URL重定向到80端口下的一个静态网页，这个URL中添加前台需要的返回数据，由静态网页中的脚本解析URL并且调用父网页的函数。大致是这个思路，讲的太乱了….可以看下面的链接</p>
-<p><a href="http://wengzhijuan12.blog.163.com/blog/static/3622414520138261584489/" target="_blank" rel="external">http://wengzhijuan12.blog.163.com/blog/static/3622414520138261584489/</a></p>
-<p>终于折腾完了，这是文件结构，基本以express为标准</p>
-<p>网站雏形也出来了：www.lifejx.com（别乱戳，会蹦掉的= =）</p>
-<p>说了那么多，折腾那么久，其实就是因为后台java是定死的，而我又不想写jsp什么的，于是就是各种折腾….</p>
-<p>个人理解的前段应该是：负责路由及展示出来的元素，后台只负责提供数据接口（angular），这样子就是会导致前台的工作量不断的加大。</p>
-<p>入前端没多久，觉得有什么问题可以讨论下~轻喷…</p>
+        <h1 id="响应式布局的三种方式"><a href="#响应式布局的三种方式" class="headerlink" title="响应式布局的三种方式"></a>响应式布局的三种方式</h1><h2 id="流布局"><a href="#流布局" class="headerlink" title="流布局"></a>流布局</h2><blockquote>
+<p>  流布局,宽度使用百分比值,子元素使用float或者百分比布局。或者flex布局<br>适用范围：适用于特定目标机型</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">.div &#123;</div><div class="line">  width:100%; height:100px;</div><div class="line">&#125;</div><div class="line">.child &#123;</div><div class="line">  width: 50%;</div><div class="line">  float: left;</div><div class="line">&#125;</div><div class="line">.child &#123;</div><div class="line">  width:50%;</div><div class="line">  float:right;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="media-query媒体查询"><a href="#media-query媒体查询" class="headerlink" title="media query媒体查询"></a>media query媒体查询</h2><blockquote>
+<p>需要建立一套兼容PC、PAD、mobile多端的一体化web应用<br>代码量多，较难以维护</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">@media screen and (device-width: 640px) &#123; /*iphone4/iphon5*/</div><div class="line">  html &#123;</div><div class="line">      font-size: 100px;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">@media screen and (device-width: 750px) &#123; /*iphone6*/</div><div class="line">  html &#123;</div><div class="line">      font-size: 117.188px;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">@media screen and (device-width: 1240px) &#123; /*iphone6s*/</div><div class="line">  html &#123;</div><div class="line">      font-size: 194.063px;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">@media screen and (min-width: 320px) and (max-width: 650px) &#123; /*手机*/</div><div class="line">  .class &#123;</div><div class="line">    float: left;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="rem"><a href="#rem" class="headerlink" title="rem"></a>rem</h2><blockquote>
+<p>REM属性指的是相对于根元素设置某个元素的字体大小。它同时也可以用作为设置高度等一系列可以用px来标注的单位。<br>适用于各种机型</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">数据计算公式 640/100 = device-width / x  可以设置其他设备根元素字体大小</div><div class="line">ihone5: 640  ： 100</div><div class="line">iphone6: 750 : 117</div><div class="line">iphone6s: 1240 : 194</div><div class="line">*/</div><div class="line">var deviceWidth = window.documentElement.clientWidth;</div><div class="line">document.documentElement.style.fontSize = (deviceWidth / 6.4) + &apos;px&apos;;</div><div class="line"></div><div class="line">// 添加到事件中</div><div class="line">window.onresize = function()&#123;</div><div class="line">  var deviceWidth = document.documentElement.clientWidth &gt; 1300 ? 1300 : document.documentElement.clientWidth;</div><div class="line">  document.documentElement.style.fontSize = (deviceWidth / 6.4) + &apos;px&apos;;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">// 同时对网页进行缩放</div><div class="line">var scale = 1 / devicePixelRatio;</div><div class="line">document.querySelector(&apos;meta[name=&quot;viewport&quot;]&apos;).setAttribute(&apos;content&apos;, </div><div class="line">&apos;initial-scale=&apos; + scale + &apos;, maximum-scale=&apos; + scale + &apos;, minimum-scale=&apos; + scale + &apos;, user-scalable=no&apos;);</div><div class="line">/*</div><div class="line">devicePixelRatio设备像素比</div><div class="line">window.devicePixelRatio是设备上物理像素和设备独立像素(device-independent pixels (dips))的比例。</div><div class="line">公式表示就是：window.devicePixelRatio = 物理像素 / dips</div><div class="line">非视网膜设备devicePixelRatio值为1，视网膜设备为2</div><div class="line">http://www.zhangxinxu.com/wordpress/2012/08/window-devicepixelratio/</div><div class="line">*/</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -343,7 +333,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/web/" rel="tag">#web</a>
+            <a href="/tags/移动web开发/" rel="tag">#移动web开发</a>
           
         </div>
       
@@ -352,16 +342,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/02/10/150210 CSS之Position详解/" rel="next" title="CSS之Position详解">
-                <i class="fa fa-chevron-left"></i> CSS之Position详解
+              <a href="/2016/06/03/160603 常用meta整理/" rel="next" title="常用meta整理">
+                <i class="fa fa-chevron-left"></i> 常用meta整理
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/04/07/160407 parse-eval-observe-watch如何区分/" rel="prev" title="$parse,$eval,$observe,$watch如何区分">
-                $parse,$eval,$observe,$watch如何区分 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/07/170507 js打开app/" rel="prev" title="JS打开APP">
+                JS打开APP <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -498,7 +488,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#响应式布局的三种方式"><span class="nav-number">1.</span> <span class="nav-text">响应式布局的三种方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#流布局"><span class="nav-number">1.1.</span> <span class="nav-text">流布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#media-query媒体查询"><span class="nav-number">1.2.</span> <span class="nav-text">media query媒体查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rem"><span class="nav-number">1.3.</span> <span class="nav-text">rem</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
