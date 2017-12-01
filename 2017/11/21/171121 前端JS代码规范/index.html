@@ -1,0 +1,670 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="web开发," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="我们为什么需要编码规范？一个主要原因是：每个人都以不同的方式编写代码。我可能喜欢以某种方式做某件事，而且你可能喜欢以不同的方式去做。如果我们每个人都只在我们自己的代码上工作，这样并没有什么问题。但是，如果你有一个 10个，100个甚至1000个开发人员的团队，都在同一个代码库上工作，会发生什么呢？事情变得非常糟糕。 编码规范可以使新开发人员快速掌握代码，然后编写出其他开发人员可以快速轻松理解的代码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端JS代码规范">
+<meta property="og:url" content="http://milolu.github.io/2017/11/21/171121 前端JS代码规范/index.html">
+<meta property="og:site_name" content="Silence Lu's Blog">
+<meta property="og:description" content="我们为什么需要编码规范？一个主要原因是：每个人都以不同的方式编写代码。我可能喜欢以某种方式做某件事，而且你可能喜欢以不同的方式去做。如果我们每个人都只在我们自己的代码上工作，这样并没有什么问题。但是，如果你有一个 10个，100个甚至1000个开发人员的团队，都在同一个代码库上工作，会发生什么呢？事情变得非常糟糕。 编码规范可以使新开发人员快速掌握代码，然后编写出其他开发人员可以快速轻松理解的代码">
+<meta property="og:updated_time" content="2017-12-01T06:21:24.247Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端JS代码规范">
+<meta name="twitter:description" content="我们为什么需要编码规范？一个主要原因是：每个人都以不同的方式编写代码。我可能喜欢以某种方式做某件事，而且你可能喜欢以不同的方式去做。如果我们每个人都只在我们自己的代码上工作，这样并没有什么问题。但是，如果你有一个 10个，100个甚至1000个开发人员的团队，都在同一个代码库上工作，会发生什么呢？事情变得非常糟糕。 编码规范可以使新开发人员快速掌握代码，然后编写出其他开发人员可以快速轻松理解的代码">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 前端JS代码规范 | Silence Lu's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?19ff6f6ae56af42bc700cf933590d9a4";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Silence Lu's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-demo">
+          <a href="/demo" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-coffee"></i> <br />
+            
+            demo
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                前端JS代码规范
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-11-21T19:38:00+08:00" content="2017-11-21">
+              2017-11-21
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="我们为什么需要编码规范？"><a href="#我们为什么需要编码规范？" class="headerlink" title="我们为什么需要编码规范？"></a>我们为什么需要编码规范？</h2><p>一个主要原因是：每个人都以不同的方式编写代码。我可能喜欢以某种方式做某件事，而且你可能喜欢以不同的方式去做。如果我们每个人都只在我们自己的代码上工作，这样并没有什么问题。但是，如果你有一个 10个，100个甚至1000个开发人员的团队，都在同一个代码库上工作，会发生什么呢？事情变得非常糟糕。 编码规范可以使新开发人员快速掌握代码，然后编写出其他开发人员可以快速轻松理解的代码！</p>
+<h2 id="相关插件"><a href="#相关插件" class="headerlink" title="相关插件"></a>相关插件</h2><p>Airbnb 的这份编码规范是互联网上最受欢迎的 JavaScript 编码规范之一<br>相关链接：</p>
+<blockquote>
+<p><a href="https://github.com/airbnb/javascript" target="_blank" rel="external">eslint-config-airbnb</a><br><a href="https://github.com/yannickcr/eslint-plugin-react" target="_blank" rel="external">eslint-plugin-react</a></p>
+</blockquote>
+<h2 id="强制性规范"><a href="#强制性规范" class="headerlink" title="强制性规范"></a>强制性规范</h2><ul>
+<li><p>驼峰命名</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// good</span></div><div class="line"><span class="keyword">let</span> getFullName,</div><div class="line"></div><div class="line"><span class="comment">// bad</span></div><div class="line"><span class="keyword">let</span> a, a1, IsOk,</div></pre></td></tr></table></figure>
+</li>
+<li><p>缩进，使用空格符替换tab符</p>
+</li>
+<li><p>使用let, const代替var</p>
+</li>
+<li><p>使用 === and !== 替换 == and !=</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// bad</span></div><div class="line"><span class="keyword">if</span> (isValid === <span class="literal">true</span>) &#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// good</span></div><div class="line"><span class="keyword">if</span> (isValid) &#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// bad</span></div><div class="line"><span class="keyword">if</span> (name) &#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// good</span></div><div class="line"><span class="keyword">if</span> (name !== <span class="string">''</span>) &#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// bad</span></div><div class="line"><span class="keyword">if</span> (collection.length) &#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// good</span></div><div class="line"><span class="keyword">if</span> (collection.length &gt; <span class="number">0</span>) &#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>字符串处理</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// bad </span></div><div class="line"><span class="keyword">let</span> str = <span class="string">'first'</span> + name;</div><div class="line"><span class="keyword">let</span> str = <span class="string">`first<span class="subst">$&#123; name &#125;</span>`</span>;</div><div class="line"><span class="comment">// good </span></div><div class="line"><span class="keyword">let</span> str = <span class="string">`first<span class="subst">$&#123;name&#125;</span>`</span>;</div></pre></td></tr></table></figure>
+</li>
+<li><p>条件与返回值处理</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// bad</span></div><div class="line"><span class="keyword">if</span> (test)</div><div class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line"></div><div class="line"><span class="comment">// good</span></div><div class="line"><span class="keyword">if</span> (test) <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line"></div><div class="line"><span class="comment">// good</span></div><div class="line"><span class="keyword">if</span> (test) &#123;</div><div class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// bad</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="literal">false</span>; &#125;</div><div class="line"></div><div class="line"><span class="comment">// good</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>注释</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// bad</span></div><div class="line"><span class="comment">// make() returns a new element</span></div><div class="line"><span class="comment">// based on the passed in tag name</span></div><div class="line"><span class="comment">//</span></div><div class="line"><span class="comment">// @param &#123;String&#125; tag</span></div><div class="line"><span class="comment">// @return &#123;Element&#125; element</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">make</span>(<span class="params">tag</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> element;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// good</span></div><div class="line"><span class="comment">/**</span></div><div class="line"> * make() </div><div class="line"> * @param  &#123;String&#125; type 数据类型</div><div class="line"> * @return &#123;Object&#125; element 创建的对象</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">make</span>(<span class="params">type</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> element;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>所有变量必须声明</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// bad</span></div><div class="line">name = <span class="number">1</span>;</div><div class="line"><span class="comment">// good</span></div><div class="line"><span class="keyword">let</span> name = <span class="string">''</span>;</div><div class="line"><span class="keyword">this</span>.name = <span class="string">''</span>;</div></pre></td></tr></table></figure>
+</li>
+<li><p>js中优先使用单引号，html中优先使用双引号</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// bad</span></div><div class="line"><span class="keyword">let</span> name = <span class="string">"my name"</span>;</div><div class="line"><span class="keyword">let</span> str = <span class="string">`hello`</span>;</div><div class="line">&lt;div class='my-class'&gt;&lt;/div&gt;</div><div class="line"></div><div class="line"><span class="comment">// good</span></div><div class="line"><span class="keyword">let</span> name = <span class="string">'my name'</span>;</div><div class="line"><span class="keyword">let</span> str = <span class="string">`hello <span class="subst">$&#123;key&#125;</span>`</span>;</div><div class="line">&lt;div class="my-class"&gt;&lt;/div&gt;</div><div class="line">&lt;Grid dataIndex=<span class="string">"id"</span>/&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>代码中不可使用eval，漏洞太多</p>
+</li>
+<li><p>不可对函数参数进行操作</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// bad</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">  obj.key = <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// good</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">  <span class="keyword">const</span> key = <span class="built_in">Object</span>.prototype.hasOwnProperty.call(obj, <span class="string">'key'</span>) ? obj.key : <span class="number">1</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>对象属性取值使用.</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">const luke = &#123;</div><div class="line">  jedi: true,</div><div class="line">  age: 28,</div><div class="line">&#125;;</div><div class="line"></div><div class="line">// bad</div><div class="line">const isJedi = luke[&apos;jedi&apos;];</div><div class="line"></div><div class="line">// good</div><div class="line">const isJedi = luke.jedi;</div></pre></td></tr></table></figure>
+</li>
+<li><p>使用**代替Math.pow</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// bad</div><div class="line">const binary = Math.pow(2, 10);</div><div class="line"></div><div class="line">// good</div><div class="line">const binary = 2 ** 10;</div></pre></td></tr></table></figure>
+</li>
+<li><p>使用Classes &amp; Constructors替代es5中的类声明</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">// bad</div><div class="line">function Queue(contents = []) &#123;</div><div class="line">  this.queue = [...contents];</div><div class="line">&#125;</div><div class="line">Queue.prototype.pop = function () &#123;</div><div class="line">  const value = this.queue[0];</div><div class="line">  this.queue.splice(0, 1);</div><div class="line">  return value;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">// good</div><div class="line">class Queue &#123;</div><div class="line">  constructor(contents = []) &#123;</div><div class="line">    this.queue = [...contents];</div><div class="line">  &#125;</div><div class="line">  pop() &#123;</div><div class="line">    const value = this.queue[0];</div><div class="line">    this.queue.splice(0, 1);</div><div class="line">    return value;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>使用import/export替代require</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// bad</div><div class="line">const AirbnbStyleGuide = require(&apos;./AirbnbStyleGuide&apos;);</div><div class="line">module.exports = AirbnbStyleGuide.es6;</div><div class="line"></div><div class="line">// ok</div><div class="line">import AirbnbStyleGuide from &apos;./AirbnbStyleGuide&apos;;</div><div class="line">export default AirbnbStyleGuide.es6;</div><div class="line"></div><div class="line">// best</div><div class="line">import &#123; es6 &#125; from &apos;./AirbnbStyleGuide&apos;;</div><div class="line">export default es6;</div></pre></td></tr></table></figure>
+</li>
+<li><p>使用Iterators and Generators代替循环<br>Use map() / every() / filter() / find() / findIndex() / reduce() / some() / … to iterate over arrays, and Object.keys() / Object.values() / Object.entries() to produce arrays so you can iterate over objects.</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">const numbers = [1, 2, 3, 4, 5];</div><div class="line"></div><div class="line">// bad</div><div class="line">let sum = 0;</div><div class="line">for (let num of numbers) &#123;</div><div class="line">  sum += num;</div><div class="line">&#125;</div><div class="line">sum === 15;</div><div class="line"></div><div class="line">// good</div><div class="line">let sum = 0;</div><div class="line">numbers.forEach((num) =&gt; &#123;</div><div class="line">  sum += num;</div><div class="line">&#125;);</div><div class="line">sum === 15;</div><div class="line"></div><div class="line">// best (use the functional force)</div><div class="line">const sum = numbers.reduce((total, num) =&gt; total + num, 0);</div><div class="line">sum === 15;</div><div class="line"></div><div class="line">// bad</div><div class="line">const increasedByOne = [];</div><div class="line">for (let i = 0; i &lt; numbers.length; i++) &#123;</div><div class="line">  increasedByOne.push(numbers[i] + 1);</div><div class="line">&#125;</div><div class="line"></div><div class="line">// good</div><div class="line">const increasedByOne = [];</div><div class="line">numbers.forEach((num) =&gt; &#123;</div><div class="line">  increasedByOne.push(num + 1);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">// best (keeping it functional)</div><div class="line">const increasedByOne = numbers.map(num =&gt; num + 1);</div></pre></td></tr></table></figure>
+</li>
+<li><p>避免使用++，–</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// bad</div><div class="line">let num = 1;</div><div class="line">num++;</div><div class="line">--num;</div><div class="line"></div><div class="line">// good</div><div class="line">let num = 1;</div><div class="line">num += 1;</div><div class="line">num -= 1;</div></pre></td></tr></table></figure>
+</li>
+<li><p>移除多余三元声明</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// bad</div><div class="line">const foo = a ? a : b;</div><div class="line">const bar = c ? true : false;</div><div class="line">const baz = c ? false : true;</div><div class="line"></div><div class="line">// good</div><div class="line">const foo = a || b;</div><div class="line">const bar = !!c;</div><div class="line">const baz = !c;</div></pre></td></tr></table></figure>
+</li>
+<li><p>移除函数中多余if else 返回</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div></pre></td><td class="code"><pre><div class="line">// bad</div><div class="line">function foo() &#123;</div><div class="line">  if (x) &#123;</div><div class="line">    return x;</div><div class="line">  &#125; else &#123;</div><div class="line">    return y;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// bad</div><div class="line">function cats() &#123;</div><div class="line">  if (x) &#123;</div><div class="line">    return x;</div><div class="line">  &#125; else if (y) &#123;</div><div class="line">    return y;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// bad</div><div class="line">function dogs() &#123;</div><div class="line">  if (x) &#123;</div><div class="line">    return x;</div><div class="line">  &#125; else &#123;</div><div class="line">    if (y) &#123;</div><div class="line">      return y;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// good</div><div class="line">function foo() &#123;</div><div class="line">  if (x) &#123;</div><div class="line">    return x;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  return y;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// good</div><div class="line">function cats() &#123;</div><div class="line">  if (x) &#123;</div><div class="line">    return x;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  if (y) &#123;</div><div class="line">    return y;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//good</div><div class="line">function dogs(x) &#123;</div><div class="line">  if (x) &#123;</div><div class="line">    if (z) &#123;</div><div class="line">      return y;</div><div class="line">    &#125;</div><div class="line">  &#125; else &#123;</div><div class="line">    return z;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>格式化if条件</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">// bad</div><div class="line">if ((foo === 123 || bar === &apos;abc&apos;) &amp;&amp; doesItLookGoodWhenItBecomesThatLong() &amp;&amp; isThisReallyHappening()) &#123;</div><div class="line">  thing1();</div><div class="line">&#125;</div><div class="line"></div><div class="line">// bad</div><div class="line">if (foo === 123 &amp;&amp;</div><div class="line">  bar === &apos;abc&apos;) &#123;</div><div class="line">  thing1();</div><div class="line">&#125;</div><div class="line"></div><div class="line">// bad</div><div class="line">if (foo === 123</div><div class="line">  &amp;&amp; bar === &apos;abc&apos;) &#123;</div><div class="line">  thing1();</div><div class="line">&#125;</div><div class="line"></div><div class="line">// bad</div><div class="line">if (</div><div class="line">  foo === 123 &amp;&amp;</div><div class="line">  bar === &apos;abc&apos;</div><div class="line">) &#123;</div><div class="line">  thing1();</div><div class="line">&#125;</div><div class="line"></div><div class="line">// good</div><div class="line">if (</div><div class="line">  foo === 123</div><div class="line">  &amp;&amp; bar === &apos;abc&apos;</div><div class="line">) &#123;</div><div class="line">  thing1();</div><div class="line">&#125;</div><div class="line"></div><div class="line">// good</div><div class="line">if (</div><div class="line">  (foo === 123 || bar === &quot;abc&quot;)</div><div class="line">  &amp;&amp; doesItLookGoodWhenItBecomesThatLong()</div><div class="line">  &amp;&amp; isThisReallyHappening()</div><div class="line">) &#123;</div><div class="line">  thing1();</div><div class="line">&#125;</div><div class="line"></div><div class="line">// good</div><div class="line">if (foo === 123 &amp;&amp; bar === &apos;abc&apos;) &#123;</div><div class="line">  thing1();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>js代码使用分号</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">// bad - raises exception</div><div class="line">const luke = &#123;&#125;</div><div class="line">const leia = &#123;&#125;</div><div class="line">[luke, leia].forEach(jedi =&gt; jedi.father = &apos;vader&apos;)</div><div class="line"></div><div class="line">// bad - raises exception</div><div class="line">const reaction = &quot;No! That&apos;s impossible!&quot;</div><div class="line">(async function meanwhileOnTheFalcon()&#123;</div><div class="line">  // handle `leia`, `lando`, `chewie`, `r2`, `c3p0`</div><div class="line">  // ...</div><div class="line">&#125;())</div><div class="line"></div><div class="line">// bad - returns `undefined` instead of the value on the next line - always happens when `return` is on a line by itself because of ASI!</div><div class="line">function foo() &#123;</div><div class="line">  return</div><div class="line">    &apos;search your feelings, you know it to be foo&apos;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// good</div><div class="line">const luke = &#123;&#125;;</div><div class="line">const leia = &#123;&#125;;</div><div class="line">[luke, leia].forEach((jedi) =&gt; &#123;</div><div class="line">  jedi.father = &apos;vader&apos;;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">// good</div><div class="line">const reaction = &quot;No! That&apos;s impossible!&quot;;</div><div class="line">(async function meanwhileOnTheFalcon()&#123;</div><div class="line">  // handle `leia`, `lando`, `chewie`, `r2`, `c3p0`</div><div class="line">  // ...</div><div class="line">&#125;());</div><div class="line"></div><div class="line">// good</div><div class="line">function foo() &#123;</div><div class="line">  return &apos;search your feelings, you know it to be foo&apos;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>文件命名规范 使用camelCase暴露函数，使用PascalCase暴露Class</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">// file 1 contents</div><div class="line">class CheckBox &#123;</div><div class="line">  // ...</div><div class="line">&#125;</div><div class="line">export default CheckBox;</div><div class="line"></div><div class="line">// file 2 contents</div><div class="line">export default function fortyTwo() &#123; return 42; &#125;</div><div class="line"></div><div class="line">// file 3 contents</div><div class="line">export default function insideDirectory() &#123;&#125;</div><div class="line"></div><div class="line">// in some other file</div><div class="line">// bad</div><div class="line">import CheckBox from &apos;./checkBox&apos;; // PascalCase import/export, camelCase filename</div><div class="line">import FortyTwo from &apos;./FortyTwo&apos;; // PascalCase import/filename, camelCase export</div><div class="line">import InsideDirectory from &apos;./InsideDirectory&apos;; // PascalCase import/filename, camelCase export</div><div class="line"></div><div class="line">// bad</div><div class="line">import CheckBox from &apos;./check_box&apos;; // PascalCase import/export, snake_case filename</div><div class="line">import forty_two from &apos;./forty_two&apos;; // snake_case import/filename, camelCase export</div><div class="line">import inside_directory from &apos;./inside_directory&apos;; // snake_case import, camelCase export</div><div class="line">import index from &apos;./inside_directory/index&apos;; // requiring the index file explicitly</div><div class="line">import insideDirectory from &apos;./insideDirectory/index&apos;; // requiring the index file explicitly</div><div class="line"></div><div class="line">// good</div><div class="line">import CheckBox from &apos;./CheckBox&apos;; // PascalCase export/import/filename</div><div class="line">import fortyTwo from &apos;./fortyTwo&apos;; // camelCase export/import/filename</div><div class="line">import insideDirectory from &apos;./insideDirectory&apos;; // camelCase export/import/directory name/implicit &quot;index&quot;</div><div class="line">// ^ supports both insideDirectory.js and insideDirectory/index.js</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="建议性"><a href="#建议性" class="headerlink" title="建议性"></a>建议性</h2><ul>
+<li>缩进使用2个空格位，而不是4格。前端代码量较多，会有较多的代码层级</li>
+<li>项目中包含.eslintrc</li>
+<li>使用统一的格式化工具，eslint，html-css-js prettify</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/web开发/" rel="tag">#web开发</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/06/170906 前端路由的两种模式/" rel="next" title="前端路由的两种模式">
+                <i class="fa fa-chevron-left"></i> 前端路由的两种模式
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="Silence Lu" />
+          <p class="site-author-name" itemprop="name">Silence Lu</p>
+          <p class="site-description motion-element" itemprop="description">多一点真诚，少一点套路</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://www.silencelu.com" target="_blank" title="765232099">
+                  
+                    <i class="fa fa-fw fa-qq"></i>
+                  
+                  765232099
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/milolu" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/37489315469e/latest_articles" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  简书
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#我们为什么需要编码规范？"><span class="nav-number">1.</span> <span class="nav-text">我们为什么需要编码规范？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关插件"><span class="nav-number">2.</span> <span class="nav-text">相关插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#强制性规范"><span class="nav-number">3.</span> <span class="nav-text">强制性规范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#建议性"><span class="nav-number">4.</span> <span class="nav-text">建议性</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Silence Lu</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
