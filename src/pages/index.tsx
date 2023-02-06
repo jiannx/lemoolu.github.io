@@ -15,13 +15,13 @@ export const getStaticProps = async () => {
   };
 };
 
-export default function Home({ posts }) {
+export default function Home({ posts }: any) {
 
   return (
     <div className={styles.container}>
       qweqweqwre {JSON.stringify(posts)}
       <div>
-        {posts.map((post) => (
+        {posts.map((post: any) => (
           <article key={post.slug}>
             <Link href={`posts/${post.slug}`}>
               {post.title}
