@@ -1,6 +1,5 @@
 ---
-title: Hello2
+title: 文档2
 slug: home
-tag: 3,4
 ---
-# 234234
+# 文档内容2

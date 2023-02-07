@@ -1,6 +1,6 @@
 ---
-title: Front Matter
-tag: 1,2
+title: 文档1
+slug: page
 ---
 
-This is content.
+文档内容1
