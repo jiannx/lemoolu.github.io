@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import { getAllPosts } from '@/util';
 import { GetStaticProps, InferGetStaticPropsType, GetStaticPropsContext, GetStaticPaths } from 'next';
 import ReactMarkdown from 'react-markdown'
+// import './posts.module.scss';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const posts = getAllPosts();
