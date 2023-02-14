@@ -20,7 +20,7 @@ function Card({
 
 export default function Home({
   posts
-}) {
+}: any) {
   return (
     <div className={style.home}>
       <div className='home-banner'>
