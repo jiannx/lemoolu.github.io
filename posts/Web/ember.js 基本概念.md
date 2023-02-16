@@ -1,2 +1,0 @@
-
-[glimmerjs](https://glimmerjs.com/)

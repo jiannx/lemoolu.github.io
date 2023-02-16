@@ -1,6 +1,7 @@
 import style from './Home.module.scss';
-import Link from "next/link";
-import EnvironmentOutlined from '@ant-design/icons';
+import { Post } from '@/services/posts';
+import { useRouter } from 'next/router';
+import Button from '../Button';
 
 function Card({
   title,
@@ -20,7 +21,15 @@ function Card({
 
 export default function Home({
   posts
-}: any) {
+}: {
+  posts: Post[]
+}) {
+  const router = useRouter();
+
+  const onLinkPost = (postHash: string) => {
+    router.push(`/posts/${postHash}`);
+  }
+
   return (
     <div className={style.home}>
       <div className='home-banner'>
@@ -47,16 +56,22 @@ export default function Home({
       </Card>
 
       <Card title="Posts List">
-        <div>
-          {posts.map((post: any) => (
-            <article key={post.filePath}>
-              <Link href={`/posts/${post.fileName}`}>
-                {post.title}
-              </Link>
-              <p>{post.description}</p>
+        <div className='home-post'>
+          {posts.slice(0, 4).map((post: Post) => (
+            <article
+              key={post.hash}
+              onClick={() => {
+                onLinkPost(post.hash)
+              }}
+            >
+              <h2>{post.title}</h2>
+              <p>{post.description || post.content}</p>
             </article>
           ))}
         </div>
+        <Button link="/posts">
+          More
+        </Button>
       </Card>
 
       <Card title="DROP ME A LINE">

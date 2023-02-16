@@ -1,15 +1,13 @@
-import { getAllPosts } from '@/util/posts';
+import { postsGetList } from '@/services/posts';
 
-import Home from '@/components/Home';
+import { Home } from '@/components';
 
 export const getStaticProps = async () => {
-  const posts = getAllPosts();
+  const posts = await postsGetList();
   return {
     props: { posts },
   };
 };
-
-
 
 export default function Index({ posts }: any) {
   // https://mrd-global.net/index.php#about
