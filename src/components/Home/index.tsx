@@ -2,6 +2,8 @@ import style from './Home.module.scss';
 import { Post } from '@/services/posts';
 import { useRouter } from 'next/router';
 import Button from '../Button';
+import { useState } from 'react';
+import classnames from 'classnames';
 
 function Card({
   title,
@@ -25,6 +27,7 @@ export default function Home({
   posts: Post[]
 }) {
   const router = useRouter();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const onLinkPost = (postHash: string) => {
     router.push(`/posts/${postHash}`);
@@ -32,6 +35,14 @@ export default function Home({
 
   return (
     <div className={style.home}>
+
+      <div className={classnames('home-menu', { open: menuOpen })}>
+        <div className="home-menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
+          M
+        </div>
+
+      </div>
+
       <div className='home-banner'>
         <div className='home-banner-info'>
           <div className="home-banner-title">
@@ -51,8 +62,10 @@ export default function Home({
       <Card
         title="A LITTLE ABOUT ME"
       >
-        As a professional business and IT consultant I focus on combining both skillsets to deliver solutions. After graduating from the University of Waterloo I worked internationally, living and working in various countries for over 15 years, before returning to Canada. Over the past 30 years I have gained extensive experience in both the IT and business fields.
-        <a>contact me</a>
+        <div style={{ marginBottom: 50 }}>
+          热爱自由，多年研发经验
+        </div>
+        <Button link="/posts">CONTACT ME</Button>
       </Card>
 
       <Card title="Posts List">
@@ -70,22 +83,47 @@ export default function Home({
           ))}
         </div>
         <Button link="/posts">
+          MORE
+        </Button>
+      </Card>
+
+      {/* <Card title="作品集">
+        <div className='home-post'>
+
+        </div>
+        <Button link="/posts">
           More
         </Button>
+      </Card> */}
+
+      <Card title="照片墙">
+        <div className='home-post'>
+          {posts.slice(0, 4).map((post: Post) => (
+            <article
+              key={post.hash}
+              onClick={() => {
+                onLinkPost(post.hash)
+              }}
+            >
+              <h2>{post.title}</h2>
+              <p>{post.description || post.content}</p>
+            </article>
+          ))}
+        </div>
       </Card>
 
       <Card title="DROP ME A LINE">
         <div className='home-contact'>
           <div className='home-contact-block'>
-            <span>Address</span>
+            <span>ADDREDD</span>
             <p>Hangzhou China</p>
           </div>
           <div className='home-contact-block'>
-            <span>WeChat</span>
+            <span>WECHAT</span>
             <p>lomo_hao</p>
           </div>
           <div className='home-contact-block'>
-            <span>Email</span>
+            <span>EMAIL</span>
             <p>lomo_hao@163.com</p>
           </div>
         </div>
