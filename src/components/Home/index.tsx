@@ -4,6 +4,8 @@ import { useRouter } from 'next/router';
 import Button from '../Button';
 import { useState } from 'react';
 import classnames from 'classnames';
+import { IconMapPinFilled, IconBrandWechat, IconMail, IconMenu2 } from '@tabler/icons-react';
+import Menu from '../Menu';
 
 function Card({
   title,
@@ -35,13 +37,7 @@ export default function Home({
 
   return (
     <div className={style.home}>
-
-      <div className={classnames('home-menu', { open: menuOpen })}>
-        <div className="home-menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
-          M
-        </div>
-
-      </div>
+      <Menu />
 
       <div className='home-banner'>
         <div className='home-banner-info'>
@@ -115,14 +111,17 @@ export default function Home({
       <Card title="DROP ME A LINE">
         <div className='home-contact'>
           <div className='home-contact-block'>
-            <span>ADDREDD</span>
+            <IconMapPinFilled />
+            <span>ADDRESS</span>
             <p>Hangzhou China</p>
           </div>
           <div className='home-contact-block'>
+            <IconBrandWechat />
             <span>WECHAT</span>
             <p>lomo_hao</p>
           </div>
           <div className='home-contact-block'>
+            <IconMail />
             <span>EMAIL</span>
             <p>lomo_hao@163.com</p>
           </div>
