@@ -53,7 +53,7 @@ export async function postsGetList(): Promise<Post[]> {
       filename,
       filePath: file,
       tags: tags?.split(',') || [],
-      date: dayjs(date).format(),
+      date: dayjs(date).format('YYYY-MM-DD'),
     });
   });
   posts.sort((b: Post, a: Post) => {

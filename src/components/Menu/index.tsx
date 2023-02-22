@@ -3,32 +3,41 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import classnames from 'classnames';
 import { IconMenu2, IconHome, IconArticle, IconBox, IconMail } from '@tabler/icons-react';
+import Link from 'next/link'
 
-export default function Home() {
+interface MenuProps {
+  /** 是否强制可见 */
+  visible?: boolean;
+}
+
+export default function Menu({
+  visible,
+}) {
   const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
-
+  console.log('visible', visible)
   return (
-    <div className={classnames(style.menu, { [style.menuOpen]: menuOpen })}>
-      <div className={style.menuIcon} onClick={() => setMenuOpen(!menuOpen)}>
+    <div className={classnames(style.menu, { [style.menuOpen]: visible || menuOpen })} style={{ position: visible ? 'static': 'fixed'}}>
+      <div className={style.menuIcon} onClick={() => setMenuOpen(!menuOpen)} style={{ position: visible ? 'absolute': 'fixed'}}>
         <IconMenu2 />
       </div>
-      <div className={style.menuItem}>
+
+      <Link className={style.menuItem} href="/">
         <IconHome />
         <span>首页</span>
-      </div>
-      <div className={style.menuItem}>
+      </Link>
+      <Link className={style.menuItem} href="/blog">
         <IconArticle />
         <span>文章</span>
-      </div>
-      <div className={style.menuItem}>
+      </Link>
+      {/* <Link className={style.menuItem}  href="/posts">
         <IconBox />
         <span>作品</span>
-      </div>
-      <div className={style.menuItem}>
+      </Link> */}
+      <Link className={style.menuItem} href="/#contact">
         <IconMail />
         <span>联系</span>
-      </div>
+      </Link>
     </div>
   );
 }

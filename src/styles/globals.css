@@ -1,0 +1,14 @@
+@tailwind components;
+@tailwind utilities;
+
+body {
+  color: var(--dark);
+}
+
+.color-primary {
+  color: var(--primary);
+}
+
+a {
+  color: var(--primary);
+}

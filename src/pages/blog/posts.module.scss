@@ -1,0 +1,13 @@
+.home {
+  background-color: aquamarine;
+}
+.posts {
+  padding: 12px 0 32px 0;
+  border-bottom: 1px solid var(--gray);
+  a {
+    text-decoration: none;
+  }
+  h2 {
+    font-weight: 900;
+  }
+}

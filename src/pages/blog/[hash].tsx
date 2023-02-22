@@ -4,8 +4,7 @@ import { getAllPosts } from '@/util';
 import { GetStaticProps, InferGetStaticPropsType, GetStaticPropsContext, GetStaticPaths } from 'next';
 import ReactMarkdown from 'react-markdown'
 import { postsGetList } from '@/services/posts';
-import { Button } from '@/components';
-// import './posts.module.scss';
+import { Button, Page } from '@/components';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await postsGetList();
@@ -25,14 +24,23 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext<any>) => 
   };
 };
 
-export default function Page(props: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Posts(props: InferGetStaticPropsType<typeof getStaticProps>) {
   const {
     post,
   } = props;
 
   return (
-    <ReactMarkdown>
-      {post?.content || ''}
-    </ReactMarkdown>
+    <Page container menu>
+      <h1>{post?.title}</h1>
+      <div>
+        {post?.date}
+      </div>
+      <div>
+        {post?.description}
+      </div>
+      <ReactMarkdown>
+        {post?.content || ''}
+      </ReactMarkdown>
+    </Page>
   );
 }
