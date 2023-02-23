@@ -15,10 +15,10 @@ export default function Menu({
 }) {
   const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
-  console.log('visible', visible)
+
   return (
-    <div className={classnames(style.menu, { [style.menuOpen]: visible || menuOpen })} style={{ position: visible ? 'static': 'fixed'}}>
-      <div className={style.menuIcon} onClick={() => setMenuOpen(!menuOpen)} style={{ position: visible ? 'absolute': 'fixed'}}>
+    <div className={classnames(style.menu, { [style.menuOpen]: visible || menuOpen })} style={{ position: visible ? 'static' : 'fixed' }}>
+      <div className={style.menuIcon} onClick={() => setMenuOpen(!menuOpen)} style={{ position: visible ? 'absolute' : 'fixed' }}>
         <IconMenu2 />
       </div>
 
@@ -38,6 +38,7 @@ export default function Menu({
         <IconMail />
         <span>联系</span>
       </Link>
+
     </div>
   );
 }

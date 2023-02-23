@@ -46,7 +46,7 @@ export async function postsGetList(): Promise<Post[]> {
     // 标题，日期，标签，正文
     const { data: { title, date, tags, description }, content } = matter(source);
     posts.push({
-      hash: crypto.createHash('md5').update(file).digest('hex'),
+      hash: crypto.createHash('md5').update(file).digest('hex') + '-' +filename,
       title: title || filename,
       description: description || '',
       content: content || '',

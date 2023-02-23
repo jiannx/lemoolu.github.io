@@ -23,7 +23,7 @@ export default function Posts({
     <Page container menu>
       {posts.map(p => (
         <div key={p.hash} style={{ paddingBottom: 40 }} className={styles.posts}>
-          <Link href={`/posts/${p.hash}`}><h2>{p.title}</h2></Link>
+          <Link href={`/blog/${p.hash}`}><h2>{p.title}</h2></Link>
           <small>
             {p.date}
           </small>

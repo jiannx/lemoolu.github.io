@@ -6,11 +6,13 @@ import { useState } from 'react';
 import classnames from 'classnames';
 import { IconMapPinFilled, IconBrandWechat, IconMail, IconMenu2 } from '@tabler/icons-react';
 import Page from '../Page';
+import Image from 'next/image';
 
 function Card({
   title,
   children,
   id,
+  bottom,
 }: any) {
   return (
     <div className='home-card' id={id}>
@@ -20,6 +22,11 @@ function Card({
       <div className='home-card-content'>
         {children}
       </div>
+      {bottom &&
+        <div className='home-card-bottom'>
+          {bottom}
+        </div>
+      }
     </div>
   )
 }
@@ -33,38 +40,33 @@ export default function Home({
   const [menuOpen, setMenuOpen] = useState(false);
 
   const onLinkPost = (postHash: string) => {
-    router.push(`/posts/${postHash}`);
+    router.push(`/blog/${postHash}`);
   }
 
   return (
     <Page className={style.home}>
       <div className='home-banner'>
         <div className='home-banner-info'>
-          <div className="home-banner-title">
-            <h1>
-              Lemoo <span className='color-primary'>Lu</span>
-            </h1>
-            <span>
-              {'programmer，Photographer'.toUpperCase()}
-            </span>
-          </div>
+          <h1>
+            莫失 <span className='color-primary'>已心</span>
+          </h1>
+          <span>
+            {'programmer，Photographer'.toUpperCase()}
+          </span>
         </div>
-        <div className='home-banner-photo'>
-          <img src="https://xizhi-note-imgages.oss-cn-hangzhou.aliyuncs.com/DSCF0242.jpg" alt="" />
-        </div>
+        <div className='home-banner-photo'></div>
       </div>
 
       <Card
-        title={<span>A LITTLE <span className='color-primary'>ABOUT</span> ME</span>}
+        title={<>A LITTLE <span className='color-primary'>ABOUT</span> ME</>}
+        bottom={<Button link="#contact">CONTACT ME</Button>}
       >
-        <div style={{ marginBottom: 48 }}>
-          热爱自由，多年研发经验
-        </div>
-        <Button link="#contact">CONTACT ME</Button>
+        热爱Coding，认真生活，爱摄影，爱钓鱼
       </Card>
 
       <Card
-        title={<span><span className='color-primary'>Posts</span> List</span>}
+        title={<><span className='color-primary'>Posts</span> List</>}
+        bottom={<Button link="/blog">MORE</Button>}
       >
         <div className='home-post'>
           {posts.slice(0, 4).map((post: Post) => (
@@ -79,35 +81,31 @@ export default function Home({
             </article>
           ))}
         </div>
-        <Button link="/blog">
-          MORE
-        </Button>
       </Card >
 
-      {/* <Card title="作品集">
-        <div className='home-post'>
+      {/* <Card title="作品集"></Card> */}
 
-        </div>
-        <Button link="/posts">
-          More
-        </Button>
-      </Card> */}
-
-      {/* <Card title="照片墙">
-        <div className='columns-3'>
-          {posts.slice(0, 4).map((post: Post) => (
-            <article
-              key={post.hash}
-              onClick={() => {
-                onLinkPost(post.hash)
-              }}
-            >
-              <h2>{post.title}</h2>
-              <p>{post.description || post.content}</p>
-            </article>
+      <Card title={<span><span className='color-primary'>PHOTOS</span> EXAMPLE</span>}>
+        <div className='home-photos'>
+          {[
+            'https://xizhi-note-imgages.oss-cn-hangzhou.aliyuncs.com/DSCF1300.jpg',
+            'https://xizhi-note-imgages.oss-cn-hangzhou.aliyuncs.com/DSCF3009.jpg',
+            'https://xizhi-note-imgages.oss-cn-hangzhou.aliyuncs.com/DSCF3076.jpg',
+            'https://xizhi-note-imgages.oss-cn-hangzhou.aliyuncs.com/DSCF3369.jpg',
+            'https://xizhi-note-imgages.oss-cn-hangzhou.aliyuncs.com/DSCF8139.jpg',
+            'https://xizhi-note-imgages.oss-cn-hangzhou.aliyuncs.com/DSCF9137.jpg',
+            'https://xizhi-note-imgages.oss-cn-hangzhou.aliyuncs.com/IMG_0452.jpg',
+            'https://xizhi-note-imgages.oss-cn-hangzhou.aliyuncs.com/IMG_3816.jpg',
+          ].map((url: string) =>
+          (
+            <div className='home-photo' key={url}>
+              <img src={url} alt="" />
+            </div>
           ))}
         </div>
-      </Card> */}
+      </Card>
+
+
       <Card
         title={<span>DROP <span className='color-primary'>ME</span> A LINE</span>}
         id="contact"
@@ -130,6 +128,7 @@ export default function Home({
           </div>
         </div>
       </Card>
+
     </Page >
   );
 }

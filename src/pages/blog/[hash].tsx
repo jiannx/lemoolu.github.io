@@ -31,7 +31,7 @@ export default function Posts(props: InferGetStaticPropsType<typeof getStaticPro
 
   return (
     <Page container menu>
-      <h1>{post?.title}</h1>
+      <h1 style={{ marginTop: 48 }}>{post?.title}</h1>
       <div>
         {post?.date}
       </div>

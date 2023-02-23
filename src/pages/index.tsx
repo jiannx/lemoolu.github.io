@@ -1,5 +1,4 @@
 import { postsGetList } from '@/services/posts';
-
 import { Home } from '@/components';
 
 export const getStaticProps = async () => {
@@ -11,7 +10,7 @@ export const getStaticProps = async () => {
 
 export default function Index({ posts }: any) {
   // https://mrd-global.net/index.php#about
-  return ( 
+  return (
     <Home posts={posts} />
   );
 }

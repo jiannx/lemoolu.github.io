@@ -8,7 +8,7 @@ export default function Bottom({}: BottomProps) {
 
   return (
     <div className={styles.bottom}>
-      Designed by LemooLu
+      Personal blog by LemooLu
     </div>
   )
 }
