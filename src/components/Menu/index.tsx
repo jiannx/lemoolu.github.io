@@ -12,7 +12,7 @@ interface MenuProps {
 
 export default function Menu({
   visible,
-}) {
+}: MenuProps) {
   const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
 
