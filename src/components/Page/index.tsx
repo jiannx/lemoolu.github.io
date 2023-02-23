@@ -11,7 +11,7 @@ export default function Page(props: any) {
   return (
     <>
       <Head>
-        <title>LemooLu's Blog</title>
+        <title>LemooLu&apos;s Blog</title>
       </Head>
       <div className={classnames(styles.page, props.className)}>
         <Menu visible={props.menu} />
