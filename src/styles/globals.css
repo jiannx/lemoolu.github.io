@@ -11,4 +11,9 @@ body {
 
 a {
   color: var(--primary);
+  transition: all .5s;
+}
+
+a:hover {
+  opacity: 0.8;
 }

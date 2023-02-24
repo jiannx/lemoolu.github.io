@@ -1,10 +1,8 @@
 import { useRouter } from 'next/router'
-// import { getFileContent } from '@/util';
-import { getAllPosts } from '@/util';
 import { GetStaticProps, InferGetStaticPropsType, GetStaticPropsContext, GetStaticPaths } from 'next';
 import ReactMarkdown from 'react-markdown'
 import { postsGetList } from '@/services/posts';
-import { Button, Page } from '@/components';
+import { MarkdownRender, Page } from '@/components';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await postsGetList();
@@ -31,16 +29,16 @@ export default function Posts(props: InferGetStaticPropsType<typeof getStaticPro
 
   return (
     <Page container menu>
-      <h1 style={{ marginTop: 48 }}>{post?.title}</h1>
+      <h1 style={{ marginTop: 24 }}>{post?.title}</h1>
       <div>
         {post?.date}
       </div>
       <div>
         {post?.description}
       </div>
-      <ReactMarkdown>
+      <MarkdownRender>
         {post?.content || ''}
-      </ReactMarkdown>
+      </MarkdownRender>
     </Page>
   );
 }
