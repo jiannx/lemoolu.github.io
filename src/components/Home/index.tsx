@@ -48,11 +48,13 @@ export default function Home({
       <div className='home-banner'>
         <div className='home-banner-info'>
           <h1>
-            莫失 <span className='color-primary'>已心</span>
+            {/* Do Not Go Gentle <br/><small>Into That</small><br/>Good Night.<span className='color-primary'></span> */}
+            Lemoo <span className='color-primary'>Lu</span>
           </h1>
-          <span>
-            {'programmer，Photographer'.toUpperCase()}
-          </span>
+          <p>
+          Do not go gentle into that good night.
+            {/* {'programmer，Photographer'.toUpperCase()} */}
+          </p>
         </div>
         <div className='home-banner-photo'></div>
       </div>
@@ -61,7 +63,8 @@ export default function Home({
         title={<>A LITTLE <span className='color-primary'>ABOUT</span> ME</>}
         bottom={<Button link="#contact">CONTACT ME</Button>}
       >
-        热爱Coding，认真生活，爱摄影，爱钓鱼
+        爱拍照，爱钓鱼，认真生活的代码工程师
+        {/* programmer，Photographer,热爱Coding，认真生活，爱摄影，爱钓鱼 */}
       </Card>
 
       <Card
