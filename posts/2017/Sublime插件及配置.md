@@ -1,7 +1,8 @@
 ---
 title: Sublime插件及配置
 date: 2017-10-01
-tags: git
+tags: 通用
+description: Sublime前端开发相关插件整理
 ---
 
 ## 插件
@@ -44,7 +45,6 @@ js高亮
 
 ### scss
 支持scss语法
-
 
 
 ### Markdown Preview
