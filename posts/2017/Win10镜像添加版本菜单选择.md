@@ -1,7 +1,8 @@
 ---
 title: Win10镜像添加版本菜单选择
 date: 2017-04-01
-tags: git
+tags: 通用
+description: win10通过镜像安装时，放开专业版的选项
 ---
 
 # Win10镜像添加版本菜单选择
