@@ -8,6 +8,9 @@ body {
 .color-primary {
   color: var(--primary);
 }
+.color-dark {
+  color: var(--dark);
+}
 
 a {
   color: var(--primary);

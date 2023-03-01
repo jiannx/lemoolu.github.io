@@ -1,7 +1,7 @@
 ---
 title: Lib list
 date: 2018-11-01
-tags: git
+tags: web
 ---
 
 - [glob js目录文件匹配](https://github.com/isaacs/node-glob)

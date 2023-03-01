@@ -1,13 +1,25 @@
-.home {
-  background-color: aquamarine;
+.page {
+
 }
+
 .posts {
-  padding: 12px 0 32px 0;
-  border-bottom: 1px solid var(--gray);
+  // padding: 12px 0 12px 0;
+  height: 60px;
+  line-height: 60px;
+  border-bottom: 1px dashed var(--gray);
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all .5s;
+  &:hover {
+    border-bottom: 1px dashed var(--dark);
+  }
+
   a {
     text-decoration: none;
   }
-  h2 {
-    font-weight: 900;
+
+  h3 {
+    margin: 0;
   }
 }

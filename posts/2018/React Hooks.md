@@ -1,11 +1,8 @@
 ---
-title: React Hooks
+title: 初识React Hooks
 date: 2018-10-15
-tags: git
+tags: web
 ---
-
-# React Hooks
-
 
 ## 基本
 > 在不适用React类的形式下去使用state及其他功能    
@@ -31,7 +28,7 @@ tags: git
 3. we will keep supporting class components for the foreseeable future
 
 ## Glance
-```react
+```js
 import { useState, useEffect } from 'react';
 
 function Example() {
@@ -53,7 +50,8 @@ function Example() {
   );
 }
 ```
-```react
+
+```js
 function todosReducer(state, action) {
   switch (action.type) {
     case 'add':

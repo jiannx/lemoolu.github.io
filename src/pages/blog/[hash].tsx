@@ -3,6 +3,9 @@ import { GetStaticProps, InferGetStaticPropsType, GetStaticPropsContext, GetStat
 import ReactMarkdown from 'react-markdown'
 import { postsGetList } from '@/services/posts';
 import { MarkdownRender, Page } from '@/components';
+import hljs from 'highlight.js';
+import 'highlight.js/styles/default.css';
+import { useEffect } from 'react';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await postsGetList();
@@ -27,15 +30,19 @@ export default function Posts(props: InferGetStaticPropsType<typeof getStaticPro
     post,
   } = props;
 
+  useEffect(() => {
+    hljs.highlightAll();
+  }, []);
+
   return (
     <Page container menu>
-      <h1 style={{ marginTop: 24 }}>{post?.title}</h1>
+      <h1 style={{ margin: '48px 0', fontSize: '3em' }}>{post?.title}</h1>
       <div>
         {post?.date}
       </div>
-      <div>
+      {/* <div>
         {post?.description}
-      </div>
+      </div> */}
       <MarkdownRender>
         {post?.content || ''}
       </MarkdownRender>

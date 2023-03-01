@@ -7,7 +7,6 @@ import classnames from 'classnames';
 import Head from 'next/head'
 
 export default function Page(props: any) {
-  console.log('props', props)
   return (
     <>
       <Head>
@@ -15,7 +14,7 @@ export default function Page(props: any) {
       </Head>
       <div className={classnames(styles.page, props.className)}>
         <Menu visible={props.menu} />
-        <div className={classnames(styles.content, { [styles.container]: props.container })}>
+        <div className={classnames(styles.content, { [styles.container]: props.container })} style={props.style}>
           {props.children}
         </div>
         <Bottom />

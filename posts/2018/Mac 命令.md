@@ -1,7 +1,7 @@
 ---
-title: Mac 命令
+title: Mac常用命令
 date: 2018-11-21
-tags: git
+tags: 通用
 ---
 
 ## open

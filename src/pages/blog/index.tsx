@@ -2,7 +2,9 @@ import { postsGetList } from '@/services/posts';
 import type { Post } from '@/services/posts';
 import { Button, Page } from '@/components';
 import styles from './posts.module.scss';
-import Link from 'next/link'
+import Link from 'next/link';
+import dayjs from 'dayjs';
+import { useRouter } from 'next/router'
 
 export const getStaticProps = async () => {
   const posts = await postsGetList();
@@ -18,18 +20,38 @@ interface PostsProps {
 export default function Posts({
   posts
 }: PostsProps) {
+  const router  = useRouter();
+
+  const postsOfYear: Array<[number, Post[]]> = [];
+  posts.forEach(x => {
+    const year = dayjs(x.date).year();
+    console.log(year);
+    let yearPosts = postsOfYear.find((arr: any[]) => arr[0] === year);
+    if (!yearPosts) {
+      yearPosts = [year, []];
+      postsOfYear.push(yearPosts);
+    }
+    yearPosts[1].push(x);
+  });
+  postsOfYear.sort(x => x[0]);
+  console.log(postsOfYear);
 
   return (
     <Page container menu>
-      {posts.map(p => (
-        <div key={p.hash} style={{ paddingBottom: 40 }} className={styles.posts}>
-          <Link href={`/blog/${p.hash}`}><h2>{p.title}</h2></Link>
-          <small>
-            {p.date}
-          </small>
-          <p>
-            {p.description}
-          </p>
+      {postsOfYear.map(year => (
+        <div key={year[0]}>
+          <h1 className="color-primary" style={{marginTop: 48}}>{year[0]}</h1>
+          {year[1].map(p => (
+            <div key={p.hash} className={styles.posts} onClick={() => router.push(`/blog/${p.hash}`)}>
+              <h3 className="color-primary">{p.title}</h3>
+              <small>
+                {p.date}
+              </small>
+              {/* <p>
+                {p.description}
+              </p> */}
+            </div>
+          ))}
         </div>
       ))}
     </Page>

@@ -4,9 +4,6 @@ date: 2017-08-01
 tags: 通用
 ---
 
-
-# Yarn命令
-
 ### yarn add
 
 ```js

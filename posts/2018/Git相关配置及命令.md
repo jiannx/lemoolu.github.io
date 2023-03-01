@@ -1,13 +1,8 @@
 ---
-title: Git相关配置及命令
+title: Git相关配置
 date: 2018-08-01
-tags: git
+tags: 通用
 ---
-
-
-## 命令
-
-## 配置
 
 ### 提交保存密码
     git config credential.helper store --global 
