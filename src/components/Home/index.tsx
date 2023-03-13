@@ -91,14 +91,14 @@ export default function Home({
       <Card title={<span><span className='color-primary'>PHOTOS</span> EXAMPLE</span>}>
         <div className='home-photos'>
           {[
-            'https://xizhi-note-imgages.oss-cn-hangzhou.aliyuncs.com/DSCF1300.jpg',
-            'https://xizhi-note-imgages.oss-cn-hangzhou.aliyuncs.com/DSCF3009.jpg',
-            'https://xizhi-note-imgages.oss-cn-hangzhou.aliyuncs.com/DSCF3076.jpg',
-            'https://xizhi-note-imgages.oss-cn-hangzhou.aliyuncs.com/DSCF3369.jpg',
-            'https://xizhi-note-imgages.oss-cn-hangzhou.aliyuncs.com/DSCF8139.jpg',
-            'https://xizhi-note-imgages.oss-cn-hangzhou.aliyuncs.com/DSCF9137.jpg',
-            'https://xizhi-note-imgages.oss-cn-hangzhou.aliyuncs.com/IMG_0452.jpg',
-            'https://xizhi-note-imgages.oss-cn-hangzhou.aliyuncs.com/IMG_3816.jpg',
+            '/images/DSCF1300.jpg',
+            '/images/DSCF3009.jpg',
+            '/images/DSCF3076.jpg',
+            '/images/DSCF3369.jpg',
+            '/images/DSCF8139.jpg',
+            '/images/DSCF9137.jpg',
+            '/images/IMG_0452.jpg',
+            '/images/IMG_3816.jpg',
           ].map((url: string) =>
           (
             <div className='home-photo' key={url}>

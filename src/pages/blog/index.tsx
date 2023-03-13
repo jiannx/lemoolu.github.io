@@ -25,7 +25,6 @@ export default function Posts({
   const postsOfYear: Array<[number, Post[]]> = [];
   posts.forEach(x => {
     const year = dayjs(x.date).year();
-    console.log(year);
     let yearPosts = postsOfYear.find((arr: any[]) => arr[0] === year);
     if (!yearPosts) {
       yearPosts = [year, []];
@@ -34,7 +33,6 @@ export default function Posts({
     yearPosts[1].push(x);
   });
   postsOfYear.sort(x => x[0]);
-  console.log(postsOfYear);
 
   return (
     <Page container menu>
