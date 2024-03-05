@@ -1,5 +1,7 @@
 .icon {
+  fill: var(--color-dark);
+
   &:hover {
-    fill: var(--primary);
+    fill: var(--color-primary);
   }
 }

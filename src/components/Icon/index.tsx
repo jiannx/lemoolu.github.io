@@ -11,7 +11,7 @@ export function IconDeer({
       viewBox="0 0 1024 1024"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
-      className={classNames('transition-all', {
+      className={classNames({
         [styles.icon]: activeHover
       })}
     >

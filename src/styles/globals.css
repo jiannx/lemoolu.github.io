@@ -2,44 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  color: var(--dark);
+@layer base {
+  :root {
+    --rgb-primary: 210 54 105;
+    --rgb-secondary: 244 208 176;
+    --rgb-contrast: 5 168 180;
+    --rgb-white: 255 255 255;
+    --rgb-gray: 238 238 238;
+    --rgb-dark: 51 51 51;
+    --rgb-black: 0 0 0;
+    --color-primary: rgb(var(--rgb-primary));
+    --color-secondary: rgb(var(--rgb-secondary));
+    --color-contrast: rgb(var(--rgb-contrast));
+    --color-white: rgb(var(--rgb-white));
+    --color-gray: rgb(var(--rgb-gray));
+    --color-dark: rgb(var(--rgb-dark));
+    --color-black: rgb(var(--rgb-black));
+  }
+
+  :root[class~="dark"] {
+    --rgb-primary: 210 54 105;
+    --rgb-secondary: 244 208 176;
+    --rbg-contrast: 5 168 180;
+    --rgb-white: 0 0 0;
+    --rgb-gray: 51 51 51;
+    --rgb-dark: 238 238 238;
+    --rgb-black: 255 255 255;
+  }
+}
+* {
+  transition: all .2s;
 }
 
-.color-primary {
-  color: var(--primary);
-}
-
-.color-dark {
-  color: var(--dark);
+a {
+  cursor: pointer;
 }
 
 a:hover {
-  color: var(--primary);
-  opacity: 0.8;
+  color: var(--color-primary);
 }
 
-
-.g-text-primary {
-  color: var(--primary);
-}
-
-.g-text-gray {
-  color: var(--gray);
-}
-
-.g-text-dark {
-  color: var(--dark);
-}
-
-.g-bg-primary {
-  background-color: var(--primary);
-}
-
-.g-bg-dark {
-  background-color: var(--dark);
-}
-
-.g-bg-gray {
-  background-color: var(--gray);
+.g-transition {
+  transition: all .2s;
 }
