@@ -1,3 +1,4 @@
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -8,15 +9,37 @@ body {
 .color-primary {
   color: var(--primary);
 }
+
 .color-dark {
   color: var(--dark);
 }
 
-a {
+a:hover {
   color: var(--primary);
-  transition: all .5s;
+  opacity: 0.8;
 }
 
-a:hover {
-  opacity: 0.8;
+
+.g-text-primary {
+  color: var(--primary);
+}
+
+.g-text-gray {
+  color: var(--gray);
+}
+
+.g-text-dark {
+  color: var(--dark);
+}
+
+.g-bg-primary {
+  background-color: var(--primary);
+}
+
+.g-bg-dark {
+  background-color: var(--dark);
+}
+
+.g-bg-gray {
+  background-color: var(--gray);
 }
