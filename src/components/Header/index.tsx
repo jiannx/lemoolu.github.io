@@ -29,7 +29,7 @@ export default function Header({ }: MenuProps) {
           <div className="w-0.5 h-4 bg-gray"></div>
           <div className='flex items-center'>
             <DarkSwitch className='ml-4 h-4' />
-            {/* <LngSwitch className='ml-4' /> */}
+            <LngSwitch className='ml-4' />
           </div>
         </div>
       </div>

@@ -7,6 +7,7 @@ import classnames from 'classnames';
 import { IconMapPinFilled, IconBrandWechat, IconMail, IconMenu2 } from '@tabler/icons-react';
 import Page from '../Page';
 import Image from 'next/image';
+import { useTranslation } from 'react-i18next';
 
 function Card({
   title,
@@ -41,11 +42,11 @@ export default function Home({
   posts: Post[]
 }) {
   const router = useRouter();
-  const [menuOpen, setMenuOpen] = useState(false);
 
   const onLinkPost = (postHash: string) => {
     router.push(`/blog/${postHash}`);
   }
+  const [t] = useTranslation();
 
   return (
     <Page className={style.home}>
@@ -60,17 +61,17 @@ export default function Home({
       </div>
 
       <Card
-        title={<>A LITTLE <span className='text-primary'>ABOUT</span> ME</>}
-        bottom={<Button link="#contact">CONTACT ME</Button>}
+        title={<>{t('aLittle')} <span className='text-primary'>{t('about')}</span> {t('me')}</>}
+        bottom={<Button link="#contact">{t('contactMe')}</Button>}
       >
         {/* 爱拍照，爱钓鱼，认真生活的代码工程师 */}
-        Love taking photos, love fishing, a code engineer who lives life seriously.
+        {t('aboutInfo')}
         {/* programmer，Photographer,热爱Coding，认真生活，爱摄影，爱钓鱼 */}
       </Card>
 
       <Card
-        title={<><span className='text-primary'>Posts</span> List</>}
-        bottom={<Button link="/blog">MORE</Button>}
+        title={<><span className='text-primary'>{t('posts')}</span> {t('list')}</>}
+        bottom={<Button link="/blog">{t('more')}</Button>}
       >
         <div className='home-post'>
           {posts.slice(0, 4).map((post: Post) => (
@@ -89,7 +90,7 @@ export default function Home({
 
       {/* <Card title="作品集"></Card> */}
 
-      <Card title={<span><span className='text-primary'>PHOTOS</span> EXAMPLE</span>}>
+      <Card title={<span><span className='text-primary'>{t('photos')}</span> {t('example')}</span>}>
         <div className='home-photos'>
           {[
             '/images/DSCF1300.jpg',
@@ -111,23 +112,23 @@ export default function Home({
 
 
       <Card
-        title={<span>DROP <span className='text-primary'>ME</span> A LINE</span>}
+        title={<span>{t('contact')} <span className='text-primary'>{t('me')}</span></span>}
         id="contact"
       >
         <div className='home-contact'>
           <div className='home-contact-block'>
             <div className='text-center'><IconMapPinFilled /></div>
-            <span>ADDRESS</span>
-            <p>Hangzhou, China</p>
+            <span>{t('address')}</span>
+            <p>{t('addressInfo')}</p>
           </div>
           <div className='home-contact-block'>
             <IconBrandWechat />
-            <span>WECHAT</span>
+            <span>{t('wechat')}</span>
             <p>lomo_hao</p>
           </div>
           <div className='home-contact-block'>
             <IconMail />
-            <span>EMAIL</span>
+            <span>{t('email')}</span>
             <p><a href="mailto:lomo_hao@163.com">lomo_hao@163.com</a></p>
           </div>
         </div>
