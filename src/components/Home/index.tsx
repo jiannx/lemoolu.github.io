@@ -63,7 +63,8 @@ export default function Home({
         title={<>A LITTLE <span className='text-primary'>ABOUT</span> ME</>}
         bottom={<Button link="#contact">CONTACT ME</Button>}
       >
-        爱拍照，爱钓鱼，认真生活的代码工程师
+        {/* 爱拍照，爱钓鱼，认真生活的代码工程师 */}
+        Love taking photos, love fishing, a code engineer who lives life seriously.
         {/* programmer，Photographer,热爱Coding，认真生活，爱摄影，爱钓鱼 */}
       </Card>
 
@@ -117,7 +118,7 @@ export default function Home({
           <div className='home-contact-block'>
             <div className='text-center'><IconMapPinFilled /></div>
             <span>ADDRESS</span>
-            <p>Hangzhou China</p>
+            <p>Hangzhou, China</p>
           </div>
           <div className='home-contact-block'>
             <IconBrandWechat />

@@ -26,6 +26,9 @@ dependencies:
   eslint-config-next:
     specifier: 13.1.6
     version: 13.1.6(eslint@8.33.0)(typescript@4.9.5)
+  github-markdown-css:
+    specifier: ^5.5.1
+    version: 5.5.1
   glob:
     specifier: ^8.1.0
     version: 8.1.0
@@ -1772,6 +1775,11 @@ packages:
     resolution: {integrity: sha512-wuMsz4leaj5hbGgg4IvDU0bqJagpftG5l5cXIAvo8uZrqn0NJqwtfupTN00VnkQJPcIRrxYrm1Ue24btpCha2A==}
     dependencies:
       resolve-pkg-maps: 1.0.0
+    dev: false
+
+  /github-markdown-css@5.5.1:
+    resolution: {integrity: sha512-2osyhNgFt7DEHnGHbgIifWawAqlc68gjJiGwO1xNw/S48jivj8kVaocsVkyJqUi3fm7fdYIDi4C6yOtcqR/aEQ==}
+    engines: {node: '>=10'}
     dev: false
 
   /glob-parent@5.1.2:
