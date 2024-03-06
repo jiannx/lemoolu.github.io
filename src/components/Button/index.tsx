@@ -26,7 +26,10 @@ export default function Button({
   }
 
   return (
-    <div className={styles[type]} onClick={_onClick}>
+    <div
+      className={'inline-block py-3 px-6 text-xs text-dark bg-white border border-dark hover:bg-gray cursor-pointer'}
+      onClick={_onClick}
+    >
       {children}
     </div>
   )

@@ -15,10 +15,14 @@ function Card({
   bottom,
 }: any) {
   return (
-    <div className='home-card' id={id}>
+    <div className='home-card text-dark bg-white' id={id}>
       <div className='home-card-head'>
-        {title}
+        <div>{title}</div>
+        <div>
+          <img src="/images/h1-bg.png" alt="" className="dark:invert" />
+        </div>
       </div>
+
       <div className='home-card-content'>
         {children}
       </div>
@@ -46,21 +50,17 @@ export default function Home({
   return (
     <Page className={style.home}>
       <div className='home-banner'>
-        <div className='home-banner-info'>
-          <h1>
-            {/* Do Not Go Gentle <br/><small>Into That</small><br/>Good Night.<span className='color-primary'></span> */}
-            Lemoo <span className='color-primary'>Lu</span>
+        <div className='pc:w-1/3 pc:[padding-top:30vh] w-full text-center text-dark bg-white flex flex-col'>
+          <h1 className='text-5xl pc:text-8xl'>
+            Lemoo <span className='text-primary'>Lu</span>
           </h1>
-          <p>
-          Do not go gentle into that good night.
-            {/* {'programmer，Photographer'.toUpperCase()} */}
-          </p>
+          <p className='italic'>Do not go gentle into that good night.</p>
         </div>
-        <div className='home-banner-photo'></div>
+        <div className='pc:w-2/3 w-full bg-cover bg-[url("/images/banner.jpg")] [transform:rotateY(180deg)] flex-1'></div>
       </div>
 
       <Card
-        title={<>A LITTLE <span className='color-primary'>ABOUT</span> ME</>}
+        title={<>A LITTLE <span className='text-primary'>ABOUT</span> ME</>}
         bottom={<Button link="#contact">CONTACT ME</Button>}
       >
         爱拍照，爱钓鱼，认真生活的代码工程师
@@ -68,7 +68,7 @@ export default function Home({
       </Card>
 
       <Card
-        title={<><span className='color-primary'>Posts</span> List</>}
+        title={<><span className='text-primary'>Posts</span> List</>}
         bottom={<Button link="/blog">MORE</Button>}
       >
         <div className='home-post'>
@@ -88,7 +88,7 @@ export default function Home({
 
       {/* <Card title="作品集"></Card> */}
 
-      <Card title={<span><span className='color-primary'>PHOTOS</span> EXAMPLE</span>}>
+      <Card title={<span><span className='text-primary'>PHOTOS</span> EXAMPLE</span>}>
         <div className='home-photos'>
           {[
             '/images/DSCF1300.jpg',
@@ -110,12 +110,12 @@ export default function Home({
 
 
       <Card
-        title={<span>DROP <span className='color-primary'>ME</span> A LINE</span>}
+        title={<span>DROP <span className='text-primary'>ME</span> A LINE</span>}
         id="contact"
       >
         <div className='home-contact'>
           <div className='home-contact-block'>
-            <IconMapPinFilled />
+            <div className='text-center'><IconMapPinFilled /></div>
             <span>ADDRESS</span>
             <p>Hangzhou China</p>
           </div>

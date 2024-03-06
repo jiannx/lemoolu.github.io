@@ -12,9 +12,9 @@ export default function Page(props: any) {
       <Head>
         <title>LemooLu&apos;s Blog</title>
       </Head>
-      <div className={classnames(styles.page, props.className)}>
-        <Header visible={props.menu} />
-        <div className={classnames(styles.content, { [styles.container]: props.container })} style={props.style}>
+      <div className={classnames('min-h-full', props.className)}>
+        <Header />
+        <div className={classnames('pt-14', { [styles.container]: props.container })} style={props.style}>
           {props.children}
         </div>
         <Bottom />

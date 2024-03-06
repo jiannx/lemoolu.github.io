@@ -23,7 +23,6 @@ export function IconSwitch({
   className,
   style,
 }: IconSwitchProps) {
-
   const _onChange = () => {
     if (value === trueValue) {
       onChange?.(falseValue);
@@ -33,7 +32,7 @@ export function IconSwitch({
   }
 
   return (
-    <a onClick={_onChange} className={classNames('block', className)} style={style}>
+    <a onClick={_onChange} className={classNames('block', className)} style={style} suppressHydrationWarning>
       {value === trueValue ? (trueIcon || trueValue) : (falseIcon || falseValue)}
     </a>
   )

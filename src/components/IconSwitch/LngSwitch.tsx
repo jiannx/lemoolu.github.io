@@ -1,29 +1,14 @@
 import { IconSunLow, IconMoonStars } from '@tabler/icons-react';
 import { IconSwitch } from './IconSwitch';
 import { useEffect, useState } from 'react';
+import {  i18n, Lng, changeLanguage, I18nCookieKey } from '@/i18n';
 
 const useDark = function () {
-  useEffect(() => {
-    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      onChange('dark');
-    } else {
-      onChange('light');
-    }
-    // Whenever the user explicitly chooses to respect the OS preference
-    // localStorage.removeItem('theme')
-  }, []);
-  const [value, setModeState] = useState<string>('');
+  const [value, setModeState] = useState<string>(i18n.language || Lng.zhCN);
 
-  const onChange = (mode: 'dark' | 'light') => {
-    setModeState(mode);
-    if (mode === 'dark') {
-      localStorage.theme = 'dark';
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.theme = 'light';
-    }
+  const onChange = (lng: Lng) => {
+    changeLanguage(lng);
+    setModeState(lng);
   }
   return { value, onChange };
 }
@@ -36,9 +21,11 @@ export function LngSwitch({
   const { value, onChange } = useDark();
   return (
     <IconSwitch
-      trueValue={'中'}
-      falseValue={'EN'}
+      trueValue={Lng.zhCN}
+      falseValue={Lng.enUS}
       className={className}
+      trueIcon={'中'}
+      falseIcon={'EN'}
       value={value}
       onChange={onChange}
     />
