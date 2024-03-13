@@ -6,7 +6,7 @@ export default {
   "contact": "联系",
   "contactMe": "联系我",
   "more": "更多",
-  aboutInfo: '爱拍照，爱钓鱼，认真生活的代码工程师',
+  'aboutInfo': '爱拍照，爱钓鱼，认真生活的代码工程师',
   'aLittle': '一些',
   'about': '关于',
   'me': '我',
@@ -18,4 +18,6 @@ export default {
   'addressInfo': '中国 杭州',
   'wechat': '微信',
   'email': '邮箱',
+  'doNotGoGentle': '不要温和地走进那个良夜',
+  'rageAgainst': '怒斥，怒斥光明的消逝',
 }

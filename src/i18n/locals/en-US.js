@@ -6,7 +6,7 @@ export default {
   "contact": "Contact",
   "contactMe": "CONTACT ME",
   "more": "MORE",
-  aboutInfo: 'Love taking photos, love fishing, a code engineer who lives life seriously.',
+  'aboutInfo': 'Love taking photos, love fishing, a code engineer who lives life seriously.',
   'aLittle': 'A LITTLE',
   'about': 'ABOUT',
   'me': 'ME',
@@ -18,4 +18,6 @@ export default {
   'addressInfo': 'Hangzhou, China',
   'wechat': 'WECHAT',
   'email': 'EMAIL',
+  'doNotGoGentle': 'Do not go gentle into that good night.',
+  'rageAgainst': 'Rage, rage against the dying of the light.',
 }

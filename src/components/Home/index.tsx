@@ -51,11 +51,15 @@ export default function Home({
   return (
     <Page className={style.home}>
       <div className='home-banner'>
-        <div className='pc:w-1/3 pc:[padding-top:30vh] w-full text-center text-dark bg-white flex flex-col'>
+        <div className='pc:w-1/3 pc:[padding-top:25vh] w-full text-center text-dark bg-white flex flex-col'>
           <h1 className='text-5xl pc:text-8xl'>
             Lemoo <span className='text-primary'>Lu</span>
           </h1>
-          <p className='italic'>Do not go gentle into that good night.</p>
+          <p className='italic leading-6'>
+            {t('doNotGoGentle')}
+            <br />
+            {t('rageAgainst')}
+          </p>
         </div>
         <div className='pc:w-2/3 w-full bg-cover bg-[url("/images/banner.jpg")] [transform:rotateY(180deg)] flex-1'></div>
       </div>

@@ -24,7 +24,7 @@ i18n
   .use(LanguageDetector)
   .init({
     resources,
-    lng: Cookies.get(I18nCookieKey) || Lng.zhCN, // language to use, more information here: https://www.i18next.com/overview/configuration-options#languages-namespaces-resources
+    lng: Cookies.get(I18nCookieKey) || Lng.enUS, // language to use, more information here: https://www.i18next.com/overview/configuration-options#languages-namespaces-resources
   });
 
 function changeLanguage(lng: Lng) {
