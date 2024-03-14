@@ -37,7 +37,7 @@ body {
 }
 
 * {
-  transition: all .2s;
+  transition: all .2s ease-in-out;
 }
 
 a {

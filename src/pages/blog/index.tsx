@@ -20,7 +20,7 @@ interface PostsProps {
 export default function Posts({
   posts
 }: PostsProps) {
-  const router  = useRouter();
+  const router = useRouter();
 
   const postsOfYear: Array<[number, Post[]]> = [];
   posts.forEach(x => {
@@ -38,16 +38,11 @@ export default function Posts({
     <Page container menu>
       {postsOfYear.map(year => (
         <div key={year[0]}>
-          <h1 className="color-primary" style={{marginTop: 48}}>{year[0]}</h1>
+          <h1 className="text-primary mt-12">{year[0]}</h1>
           {year[1].map(p => (
             <div key={p.hash} className={styles.posts} onClick={() => router.push(`/blog/${p.hash}`)}>
-              <h3 className="color-primary">{p.title}</h3>
-              <small>
-                {p.date}
-              </small>
-              {/* <p>
-                {p.description}
-              </p> */}
+              <h3>{p.title}</h3>
+              <small>{p.date}</small>
             </div>
           ))}
         </div>

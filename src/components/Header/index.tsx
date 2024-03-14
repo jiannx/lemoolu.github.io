@@ -21,7 +21,7 @@ export default function Header({ }: MenuProps) {
           <IconDeer />
         </Link>
         <div className="flex items-center text-sm text-dark">
-          <div className='flex items-center font-medium'>
+          <div className='flex items-center font-medium text-dark'>
             <Link className='px-2 mx-3 pc:mx-3' href="/" suppressHydrationWarning>{t('home')}</Link>
             <Link className='px-2 mx-3 pc:mx-3' href="/blog" suppressHydrationWarning>{t('article')}</Link>
             <Link className='px-2 mx-3 pc:mx-3' href="/#contact" suppressHydrationWarning>{t('contact')}</Link>

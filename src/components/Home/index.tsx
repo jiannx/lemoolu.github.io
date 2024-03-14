@@ -97,14 +97,14 @@ export default function Home({
       <Card title={<span><span className='text-primary'>{t('photos')}</span> {t('example')}</span>}>
         <div className='home-photos'>
           {[
-            '/images/DSCF1300.jpg',
-            '/images/DSCF3009.jpg',
-            '/images/DSCF3076.jpg',
-            '/images/DSCF3369.jpg',
-            '/images/DSCF8139.jpg',
-            '/images/DSCF9137.jpg',
-            '/images/IMG_0452.jpg',
-            '/images/IMG_3816.jpg',
+            '/images/i1.jpg',
+            '/images/i2.jpg',
+            '/images/i3.jpg',
+            '/images/i4.jpg',
+            '/images/i5.jpg',
+            '/images/i6.jpg',
+            '/images/i7.jpg',
+            '/images/i8.jpg',
           ].map((url: string) =>
           (
             <div className='home-photo' key={url}>

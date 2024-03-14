@@ -1,25 +1,14 @@
-.page {
-
-}
-
 .posts {
-  // padding: 12px 0 12px 0;
-  height: 60px;
-  line-height: 60px;
-  border-bottom: 1px dashed var(--gray);
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px dashed var(--color-gray);
   display: flex;
   justify-content: space-between;
   cursor: pointer;
-  transition: all .5s;
+  margin-bottom: 8px;
+  color: var(--color-dark);
+
   &:hover {
-    border-bottom: 1px dashed var(--dark);
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-  h3 {
-    margin: 0;
+    border-bottom: 1px dashed var(--color-dark);
   }
 }
