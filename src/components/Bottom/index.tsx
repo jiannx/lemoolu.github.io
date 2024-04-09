@@ -8,7 +8,7 @@ export default function Bottom({}: BottomProps) {
 
   return (
     <div className={styles.bottom}>
-      Personal blog by LemooLu
+      Personal blog by LemooLu. Powered by NextJS
     </div>
   )
 }
