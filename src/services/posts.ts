@@ -7,6 +7,7 @@ import matter from "gray-matter";
 import crypto from 'crypto';
 import dayjs from 'dayjs';
 
+// const glob2 = glob;
 const glob2 = util.promisify(glob);
 
 const getFileContent = (filePath: string) => {
@@ -33,6 +34,7 @@ export interface Post {
 }
 
 export async function postsGetList(): Promise<Post[]> {
+  // const files: any[] = [];
   const files = await glob2(path.resolve(mdPath, "**/*.md"));
   const posts: Post[] = [];
   // console.log(files);
