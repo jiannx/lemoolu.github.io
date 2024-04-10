@@ -1,5 +1,8 @@
+"use client"
 import * as React from 'react';
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider } from '@chakra-ui/react';
+import { I18nextProvider } from 'react-i18next';
+import { i18n } from '@/i18n';
 
 export default function RootLayout({
   children,
@@ -10,7 +13,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <ChakraProvider>
-          {children}
+          <I18nextProvider i18n={i18n}>
+            {children}
+          </I18nextProvider>
         </ChakraProvider>
       </body>
     </html>

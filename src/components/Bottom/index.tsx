@@ -1,14 +1,19 @@
 import React from "react";
-import { useRouter } from 'next/router';
-import styles from './Bottom.module.scss';
+import { Box, Center } from "@chakra-ui/react";
+import { Container } from '@/components';
 
-interface BottomProps {}
-
-export default function Bottom({}: BottomProps) {
-
+export default function Bottom({
+  h
+}: {
+  h: string;
+}) {
   return (
-    <div className={styles.bottom}>
-      Personal blog by LemooLu. Powered by NextJS
-    </div>
+    <Box>
+      <Container>
+        <Center h={h} fontSize={14}>
+          Personal blog by LemooLu. Powered by NextJS
+        </Center>
+      </Container>
+    </Box>
   )
 }

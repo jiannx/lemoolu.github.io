@@ -1,14 +1,14 @@
-"use client"
-import style from './Home.module.scss';
-import { Post } from '@/services/posts';
-import { useRouter } from 'next/router';
-import Button from '../Button';
-import { useState } from 'react';
-import classnames from 'classnames';
-import { IconMapPinFilled, IconBrandWechat, IconMail, IconMenu2 } from '@tabler/icons-react';
-import Page from '../Page';
-import Image from 'next/image';
+import { Page, Trans } from '@/components';
+import { Button } from '@chakra-ui/react';
+import { Metadata } from 'next';
+import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
+import { IconMapPinFilled, IconBrandWechat, IconMail, IconMenu2 } from '@tabler/icons-react';
+import { Post, postsGetList } from '@/services/posts';
+
+export const metadata: Metadata = {
+  title: 'LemooLu\'s Blog',
+}
 
 function Card({
   title,
@@ -37,65 +37,52 @@ function Card({
   )
 }
 
-export default function Home({
-  posts
-}: {
-  posts: Post[]
-}) {
-  const router = useRouter();
 
-  const onLinkPost = (postHash: string) => {
-    router.push(`/blog/${postHash}`);
-  }
-  const [t] = useTranslation();
+export default async function () {
+  const posts = await postsGetList();
 
   return (
-    <Page className={style.home}>
+    <Page>
       <div className='home-banner'>
         <div className='pc:w-1/3 pc:[padding-top:25vh] w-full text-center text-dark bg-white flex flex-col'>
           <h1 className='text-5xl pc:text-8xl'>
             Lemoo <span className='text-primary'>Lu</span>
           </h1>
           <p className='italic leading-6'>
-            {t('doNotGoGentle')}
+            <Trans i18nKey='doNotGoGentle' />
             <br />
-            {t('rageAgainst')}
+            <Trans i18nKey='rageAgainst' />
           </p>
         </div>
         <div className='pc:w-2/3 w-full bg-cover bg-[url("/images/banner.jpg")] [transform:rotateY(180deg)] flex-1'></div>
       </div>
 
       <Card
-        title={<>{t('aLittle')} <span className='text-primary'>{t('about')}</span> {t('me')}</>}
-        bottom={<Button link="#contact">{t('contactMe')}</Button>}
+        title={<><Trans i18nKey='aLittle' /><span className='text-primary'><Trans i18nKey='me' /></span></>}
+        bottom={<Link href={'#contac'}><Button><Trans i18nKey='contactMe' /></Button></Link>}
       >
-        {/* 爱拍照，爱钓鱼，认真生活的代码工程师 */}
-        {t('aboutInfo')}
-        {/* programmer，Photographer,热爱Coding，认真生活，爱摄影，爱钓鱼 */}
+        <Trans i18nKey='aboutInfo' />
       </Card>
 
       <Card
-        title={<><span className='text-primary'>{t('posts')}</span> {t('list')}</>}
-        bottom={<Button link="/blog">{t('more')}</Button>}
+        title={<><span className='text-primary'><Trans i18nKey='posts' /></span><Trans i18nKey='list' /></>}
+        bottom={<Link href="/blog"><Button><Trans i18nKey='more' /></Button></Link>}
       >
         <div className='home-post'>
           {posts.slice(0, 4).map((post: Post) => (
-            <article
-              key={post.hash}
-              onClick={() => {
-                onLinkPost(post.hash)
-              }}
-            >
-              <h2>{post.title}</h2>
-              <p>{post.description || post.content}</p>
-            </article>
+            <Link href={`/blog/${post.hash}`}>
+              <article
+                key={post.hash}
+              >
+                <h2>{post.title}</h2>
+                <p>{post.description || post.content}</p>
+              </article>
+            </Link>
           ))}
         </div>
       </Card >
 
-      {/* <Card title="作品集"></Card> */}
-
-      <Card title={<span><span className='text-primary'>{t('photos')}</span> {t('example')}</span>}>
+      <Card title={<span><span className='text-primary'></span><Trans i18nKey='photos' /></span>}>
         <div className='home-photos'>
           {[
             '/images/i1.jpg',
@@ -117,28 +104,28 @@ export default function Home({
 
 
       <Card
-        title={<span>{t('contact')} <span className='text-primary'>{t('me')}</span></span>}
+        title={<span><Trans i18nKey='contact' /> <span className='text-primary'><Trans i18nKey='me' /></span></span>}
         id="contact"
       >
         <div className='home-contact'>
           <div className='home-contact-block'>
             <div className='text-center'><IconMapPinFilled /></div>
-            <span>{t('address')}</span>
-            <p>{t('addressInfo')}</p>
+            <span><Trans i18nKey='address' /></span>
+            <p><Trans i18nKey='addressInfo' /></p>
           </div>
           <div className='home-contact-block'>
             <IconBrandWechat />
-            <span>{t('wechat')}</span>
+            <span><Trans i18nKey='wechat' /></span>
             <p>lomo_hao</p>
           </div>
           <div className='home-contact-block'>
             <IconMail />
-            <span>{t('email')}</span>
+            <span><Trans i18nKey='email' /></span>
             <p><a href="mailto:lomo_hao@163.com">lomo_hao@163.com</a></p>
           </div>
         </div>
       </Card>
 
-    </Page >
-  );
+    </Page>
+  )
 }

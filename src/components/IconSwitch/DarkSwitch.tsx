@@ -1,3 +1,4 @@
+"use client"
 import { IconSunLow, IconMoonStars } from '@tabler/icons-react';
 import { IconSwitch } from './IconSwitch';
 import { useEffect, useState } from 'react';
@@ -45,7 +46,7 @@ const useDark = function () {
 export function DarkSwitch({
   className
 }: {
-  className: string
+  className?: string
 }) {
   const { value, onChange } = useDark();
   return (

@@ -34,9 +34,6 @@ export default function Posts(props: InferGetStaticPropsType<typeof getStaticPro
       <div>
         {post?.date}
       </div>
-      {/* <div>
-        {post?.description}
-      </div> */}
       <MarkdownRender>
         {post?.content || ''}
       </MarkdownRender>
