@@ -1,5 +1,5 @@
 import { postsGetList } from '@/services/posts';
-import { MarkdownRender, Page } from '@/components';
+import { MarkdownRender } from '@/components';
 import { Container, Heading } from '@chakra-ui/react';
 
 /**
@@ -17,16 +17,14 @@ export default async function Posts({ params }: any) {
   const post = posts.find(x => x.hash === hash);
 
   return (
-    <Page>
-      <Container maxW='4xl'>
-        <Heading>{post?.title}</Heading>
-        <div>
-          {post?.date}
-        </div>
-        <MarkdownRender>
-          {post?.content || ''}
-        </MarkdownRender>
-      </Container>
-    </Page>
+    <>
+      <Heading>{post?.title}</Heading>
+      <div>
+        {post?.date}
+      </div>
+      <MarkdownRender>
+        {post?.content || ''}
+      </MarkdownRender>
+    </>
   );
 }

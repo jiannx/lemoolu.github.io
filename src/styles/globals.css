@@ -1,8 +1,8 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
-@layer base {
+/* body {
   :root {
     --rgb-primary: 210 54 105;
     --rgb-secondary: 244 208 176;
@@ -29,15 +29,12 @@
     --rgb-dark: 238 238 238;
     --rgb-black: 255 255 255;
   }
-}
+} */
 
 body {
   color: var(--color-dark);
   background-color: var(--color-white);
-}
-
-* {
-  transition: all .2s ease-in-out;
+  font-family: "Hind-Regular", "PingFang SC", "Arial", "Microsoft YaHei", sans-serif !important;
 }
 
 a {

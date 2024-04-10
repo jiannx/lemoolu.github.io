@@ -1,4 +1,3 @@
-import Page from '@/components/Page';
 import { postsGetList } from '@/services/posts';
 import type { Post } from '@/services/posts';
 import { Box, Card, CardHeader, Heading, Text } from '@chakra-ui/react';
@@ -20,7 +19,7 @@ export default async function () {
   postsOfYear.sort(x => x[0]);
 
   return (
-    <Page>
+    <>
       {postsOfYear.map(year => (
         <Card key={year[0]}>
           <CardHeader>
@@ -31,7 +30,7 @@ export default async function () {
               <Link key={p.hash} href={`/blog/${p.hash}`}>
                 <Box>
                   <Heading size='xs' textTransform='uppercase'>
-                  {p.title}
+                    {p.title}
                   </Heading>
                   <Text pt='2' fontSize='sm'>{p.date}</Text>
                 </Box>
@@ -40,6 +39,6 @@ export default async function () {
           })}
         </Card>
       ))}
-    </Page>
+    </>
   )
 }
