@@ -1,13 +1,25 @@
-import { extendTheme } from "@chakra-ui/react"
+import { extendTheme, withDefaultColorScheme, theme as baseTheme, } from "@chakra-ui/react"
 
 // 2. Call `extendTheme` and pass your custom values
 const theme = extendTheme({
-  initialColorMode: 'light',
-  useSystemColorMode: false,
+  config: {
+    initialColorMode: 'light',
+    useSystemColorMode: false,
+  },
   colors: {
-    primary: "#D23669",
-    secondary: "#F4D0B0",
-    contrast: "#05A8B4",
+    black: '#0b0b0b',
+    // primary: "#D23669",
+    // secondary: "#F4D0B0",
+    // contrast: "#05A8B4",
+    brand: baseTheme.colors.red,
+  },
+  semanticTokens: {
+    colors: {
+      gray: {
+        default: 'gray.100',
+        _dark: 'gray.700',
+      },
+    },
   },
 });
 

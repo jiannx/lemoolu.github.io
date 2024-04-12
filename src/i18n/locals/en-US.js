@@ -1,9 +1,9 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   "hello": "Hello",
-  "home": "Home",
-  "article": "Article",
-  "contact": "Contact",
+  "home": "HOME",
+  "article": "ARTICLE",
+  "contact": "CONTACT",
   "contactMe": "CONTACT ME",
   "more": "MORE",
   'aboutInfo': 'Love taking photos, love fishing, a code engineer who lives life seriously.',

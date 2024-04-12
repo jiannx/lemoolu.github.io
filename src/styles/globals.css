@@ -32,15 +32,16 @@
 } */
 
 body {
-  color: var(--color-dark);
-  background-color: var(--color-white);
+  /* color: var(--color-dark);
+  background-color: var(--color-white); */
   font-family: "Hind-Regular", "PingFang SC", "Arial", "Microsoft YaHei", sans-serif !important;
 }
 
-a {
-  cursor: pointer;
+@media (prefers-color-scheme: dark) {
+  body {
+  }
 }
 
 a:hover {
-  color: var(--color-primary);
+  text-decoration: none;
 }

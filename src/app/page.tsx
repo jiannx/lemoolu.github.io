@@ -1,5 +1,5 @@
-import { Page, Trans } from '@/components';
-import { Box, Button, CardBody, CardHeader, Heading, Stack, Image, Text, Card as Card2, HStack, VStack, Wrap, Flex } from '@chakra-ui/react';
+import { Page, Trans, CardGrid, CardItem, Card } from '@/components';
+import { Box, Button, CardBody, CardHeader, Heading, Stack, Image, Text, Card as Card2, HStack, VStack, Wrap, Flex, Center, GridItem } from '@chakra-ui/react';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { IconCurrentLocation, IconBrandWechat, IconMail, IconBrandWhatsapp, IconBrandTwitter } from '@tabler/icons-react';
@@ -8,17 +8,19 @@ import { Post, postsGetList } from '@/services/posts';
 export const metadata: Metadata = {
   title: 'LemooLu\'s Blog',
 }
+// backgroundImage: 'url("/images/banner.jpg"'
 
-export default async function () {
+export default async function (props) {
   const posts = await postsGetList();
+  const my = 6;
 
   return (
     <>
-      <Box my={8}>
+      <Box my={my}>
         <Text fontSize={'xl'} fontWeight={500}>这里记录我日常的一些思考，希望遇到同频的朋友。</Text>
-        <Text fontSize={'xl'} fontWeight={500}>我目前专注的方向是</Text>
+        {/* <Text fontSize={'xl'} fontWeight={500}>我目前专注的方向是</Text> */}
       </Box>
-      <HStack my={8}>
+      <HStack my={my}>
         <Box>🏕️</Box>
         <Text>
           <Trans i18nKey='doNotGoGentle' />
@@ -26,84 +28,63 @@ export default async function () {
         </Text>
       </HStack>
 
-      <Card2 mb={4}>
+      <CardGrid>
+        <Card.Person />
+        {/* <Card.Moment /> */}
+        {[
+          '/images/i1.jpg',
+          // '/images/i2.jpg',
+          '/images/i3.jpg',
+          '/images/i4.jpg',
+          '/images/i5.jpg',
+          // '/images/i6.jpg',
+          '/images/i7.jpg',
+          '/images/i8.jpg',
+        ].map((url: string) => (
+          <Card.Image key={url} url={url} />
+        ))}
+
+        {posts.slice(0, 6).map((post: Post) => (
+          <Card.Blog
+            key={post.hash}
+            title={post.title}
+            desc={post.description}
+            data={post.date}
+            href={`/blog/${post.hash}`}
+          />
+        ))}
+      </CardGrid>
+
+      <Card2 my={my}>
         <CardHeader>
-          <Heading size='md'>Hello World</Heading>
+          <Heading size='md'>Hello</Heading>
         </CardHeader>
         <CardBody>
           <Flex justifyContent={'space-around'}>
-            <div>
+            <VStack>
               <IconCurrentLocation stroke={1} />
               <Trans i18nKey='addressInfo' />
-            </div>
-            <div>
+            </VStack>
+            <VStack>
               <IconBrandWechat stroke={1} />
-              <p>lomo_hao</p>
-            </div>
-            <div>
+              <Text>lomo_hao</Text>
+            </VStack>
+            <VStack>
               <IconBrandWhatsapp stroke={1} />
-              whatsapp
-            </div>
-            <div>
+              <Text>whatsapp</Text>
+            </VStack>
+            <VStack>
               <IconMail stroke={1} />
-              lemmoo.lu@gmail.com
-            </div>
-            <div>
+              <Text>lemmoo.lu@gmail.com</Text>
+            </VStack>
+            <VStack>
               <IconBrandTwitter stroke={1} />
-              Twitter
-            </div>
+              <Text>Twitter</Text>
+            </VStack>
           </Flex>
         </CardBody>
       </Card2>
 
-      <VStack gap={4}>
-        <Card2 w={'100%'}>
-          <CardHeader>
-            <Heading size='md'>Moment</Heading>
-          </CardHeader>
-
-          <CardBody>
-            <Wrap spacing={4} justify='center'>
-              {[
-                '/images/i1.jpg',
-                // '/images/i2.jpg',
-                '/images/i3.jpg',
-                '/images/i4.jpg',
-                '/images/i5.jpg',
-                // '/images/i6.jpg',
-                '/images/i7.jpg',
-                '/images/i8.jpg',
-              ].map((url: string) =>
-              (
-                <Box boxSize='xs' key={url} overflow={"hidden"}>
-                  <Image src={url} />
-                </Box>
-              ))}
-            </Wrap>
-          </CardBody>
-        </Card2>
-
-        <Card2 style={{ backgroundImage: 'url("/images/banner.jpg"' }} w={'100%'}>
-          <CardHeader>
-            <Heading size='md'>Blog</Heading >
-          </CardHeader>
-
-          <CardBody>
-            <div className='home-post'>
-              {posts.slice(0, 4).map((post: Post) => (
-                <Link href={`/blog/${post.hash}`}>
-                  <article
-                    key={post.hash}
-                  >
-                    <h2>{post.title}</h2>
-                    {/* <p>{post.description || post.content}</p> */}
-                  </article>
-                </Link>
-              ))}
-            </div>
-          </CardBody>
-        </Card2>
-      </VStack>
     </>
   )
 }

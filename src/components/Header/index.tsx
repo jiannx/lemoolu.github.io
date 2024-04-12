@@ -5,7 +5,7 @@ import { HStack, Flex, Avatar, Divider } from '@chakra-ui/react';
 
 export default function Header() {
   return (
-    <Box w='100%' my={8}>
+    <Box w='100%' my={14}>
       <Box
         className="w-full h-full bg-white/70 backdrop-blur"
         style={{ borderBottom: '1px solid var(--color-gray)' }}
@@ -16,7 +16,7 @@ export default function Header() {
             <Link href="/">
               <Box border='1px' borderColor='gray.200' borderRadius={'100%'}>
                 <Avatar bg='none' icon={<IconDeer boxSize={6} color='black' />} >
-                  <AvatarBadge boxSize={'1em'} bg='green.500' />
+                  {/* <AvatarBadge boxSize={'1em'} bg='green.500' /> */}
                 </Avatar>
               </Box>
             </Link>

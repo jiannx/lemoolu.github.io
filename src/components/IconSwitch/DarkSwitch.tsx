@@ -2,6 +2,7 @@
 import { IconSunLow, IconMoonStars } from '@tabler/icons-react';
 import { IconSwitch } from './IconSwitch';
 import { useEffect, useState } from 'react';
+import { useColorMode } from '@chakra-ui/react';
 
 export function useCurrentColorMode() {
   const [state, setState] = useState('');
@@ -48,7 +49,8 @@ export function DarkSwitch({
 }: {
   className?: string
 }) {
-  const { value, onChange } = useDark();
+  const { colorMode, toggleColorMode } = useColorMode();
+
   return (
     <IconSwitch
       trueValue={'light'}
@@ -56,8 +58,8 @@ export function DarkSwitch({
       className={className}
       trueIcon={<IconSunLow size={16} />}
       falseIcon={<IconMoonStars size={16} />}
-      value={value}
-      onChange={onChange}
+      value={colorMode}
+      onChange={toggleColorMode}
     />
   )
 }

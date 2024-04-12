@@ -6,3 +6,4 @@ export { default as Container } from './Container';
 export { default as Bottom } from './Bottom';
 export * from './Icon';
 export * from './IconSwitch';
+export * from './Card';

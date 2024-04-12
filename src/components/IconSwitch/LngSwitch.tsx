@@ -1,5 +1,4 @@
 "use client"
-import { IconSunLow, IconMoonStars } from '@tabler/icons-react';
 import { IconSwitch } from './IconSwitch';
 import { useEffect, useState } from 'react';
 import {  i18n, Lng, changeLanguage, I18nCookieKey } from '@/i18n';
