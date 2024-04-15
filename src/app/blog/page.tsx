@@ -19,7 +19,7 @@ export default async function () {
   postsOfYear.sort(x => x[0]);
 
   return (
-    <SimpleGrid columns={3} spacing={4}>
+    <SimpleGrid columns={1} spacing={4}>
       {postsOfYear.map(year => {
         return year[1].map(p => {
           return (

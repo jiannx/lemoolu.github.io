@@ -4,9 +4,10 @@ import dayjs from 'dayjs';
 import { IconArrowUpRight } from '@tabler/icons-react';
 import { useRouter } from 'next/navigation'
 
-const Tags: any = {
+const Tags = {
   'blog': { icon: '📝' },
-  'moment': { icon: '' },
+  'moment': { icon: '💭' },
+  'personal': { icon: '💻' },
 }
 
 export function CardItem({
@@ -15,13 +16,15 @@ export function CardItem({
   colSpan,
   rowSpan,
   p,
+  asBox,
   children
 }: {
-  tag?: string;
+  tag?: keyof typeof Tags;
   link?: string;
   colSpan?: number;
   rowSpan?: number;
   p?: number;
+  asBox?: boolean;
   children?: any;
 }) {
   const router = useRouter()
@@ -29,10 +32,12 @@ export function CardItem({
     link && router.push(link);
   }
 
+  const ChildClass = asBox ? Box : GridItem;
+
   return (
-    <GridItem
-      rowSpan={rowSpan || 1}
-      colSpan={colSpan || 1}
+    <ChildClass
+      rowSpan={rowSpan}
+      colSpan={colSpan}
       width={'100%'}
       border={1}
       borderWidth={1}
@@ -44,7 +49,7 @@ export function CardItem({
       p={p ?? 4}
       cursor={link ? 'pointer' : 'auto'}
       _hover={link ? {
-        backgroundColor: 'gray'
+        backgroundColor: 'lightGray'
       } : {}}
     >
       {(tag || link) &&
@@ -54,6 +59,6 @@ export function CardItem({
         </Flex>
       }
       {children}
-    </GridItem>
+    </ChildClass>
   )
 }

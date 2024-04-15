@@ -16,8 +16,20 @@ const theme = extendTheme({
   semanticTokens: {
     colors: {
       gray: {
-        default: 'gray.100',
-        _dark: 'gray.700',
+        default: 'gray.200',
+        _dark: 'gray.600',
+      },
+      lightGray: {
+        default: 'gray.50',
+        _dark: 'gray.800',
+      },
+      dark: {
+        default: '#0B0B0B',
+        _dark: '#FFFFFF',
+      },
+      white: {
+        default: '#FFFFFF',
+        _dark: '#0B0B0B',
       },
     },
   },

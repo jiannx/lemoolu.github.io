@@ -4,6 +4,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { IconCurrentLocation, IconBrandWechat, IconMail, IconBrandWhatsapp, IconBrandTwitter } from '@tabler/icons-react';
 import { Post, postsGetList } from '@/services/posts';
+import { momentsGetList } from '@/services/moments';
 
 export const metadata: Metadata = {
   title: 'LemooLu\'s Blog',
@@ -12,25 +13,42 @@ export const metadata: Metadata = {
 
 export default async function (props) {
   const posts = await postsGetList();
-  const my = 6;
+  const moments = await momentsGetList();
 
   return (
     <>
-      <Box my={my}>
+      <Box my={8}>
         <Text fontSize={'xl'} fontWeight={500}>这里记录我日常的一些思考，希望遇到同频的朋友。</Text>
         {/* <Text fontSize={'xl'} fontWeight={500}>我目前专注的方向是</Text> */}
       </Box>
-      <HStack my={my}>
-        <Box>🏕️</Box>
-        <Text>
-          <Trans i18nKey='doNotGoGentle' />
-          {/* <Trans i18nKey='rageAgainst' /> */}
-        </Text>
-      </HStack>
+      <Box my={2}>
+        <Trans i18nKey='doNotGoGentle' /> 🏕️
+      </Box>
 
-      <CardGrid>
-        <Card.Person />
-        {/* <Card.Moment /> */}
+      <CardGrid title='Moment'>
+        {moments.slice(0, 3).map((moment) => (
+          <Card.Moment
+            key={moment.hash}
+            title={moment.content}
+            fromTitle={moment.fromTitle}
+            fromLink={moment.fromLink}
+          />
+        ))}
+      </CardGrid>
+
+      <CardGrid title='Posts'>
+        {posts.slice(0, 6).map((post: Post) => (
+          <Card.Blog
+            key={post.hash}
+            title={post.title}
+            desc={post.description}
+            data={post.date}
+            href={`/blog/${post.hash}`}
+          />
+        ))}
+      </CardGrid>
+
+      <CardGrid title='Posts'>
         {[
           '/images/i1.jpg',
           // '/images/i2.jpg',
@@ -43,48 +61,10 @@ export default async function (props) {
         ].map((url: string) => (
           <Card.Image key={url} url={url} />
         ))}
-
-        {posts.slice(0, 6).map((post: Post) => (
-          <Card.Blog
-            key={post.hash}
-            title={post.title}
-            desc={post.description}
-            data={post.date}
-            href={`/blog/${post.hash}`}
-          />
-        ))}
       </CardGrid>
 
-      <Card2 my={my}>
-        <CardHeader>
-          <Heading size='md'>Hello</Heading>
-        </CardHeader>
-        <CardBody>
-          <Flex justifyContent={'space-around'}>
-            <VStack>
-              <IconCurrentLocation stroke={1} />
-              <Trans i18nKey='addressInfo' />
-            </VStack>
-            <VStack>
-              <IconBrandWechat stroke={1} />
-              <Text>lomo_hao</Text>
-            </VStack>
-            <VStack>
-              <IconBrandWhatsapp stroke={1} />
-              <Text>whatsapp</Text>
-            </VStack>
-            <VStack>
-              <IconMail stroke={1} />
-              <Text>lemmoo.lu@gmail.com</Text>
-            </VStack>
-            <VStack>
-              <IconBrandTwitter stroke={1} />
-              <Text>Twitter</Text>
-            </VStack>
-          </Flex>
-        </CardBody>
-      </Card2>
-
+      <Heading mt={10} mb={6}>Personal</Heading>
+      <Card.Personal />
     </>
   )
 }
