@@ -6,11 +6,11 @@ import Container from '../Container';
 export default function Page(props: any) {
   return (
     <>
-      <Header h="56px" />
-      <Container minH={'calc(100vh - 56px - 100px)'}>
+      <Header />
+      <Container>
         {props.children}
       </Container>
-      <Bottom h="100px" />
+      <Bottom />
     </>
   )
 }

@@ -1,3 +1,4 @@
+import { Box } from "@chakra-ui/react";
 import classNames from "classnames";
 import React from "react";
 
@@ -32,8 +33,8 @@ export function IconSwitch({
   }
 
   return (
-    <a onClick={_onChange} className={classNames('block', className)} style={style} suppressHydrationWarning>
+    <Box cursor={'pointer'} onClick={_onChange} className={classNames('block', className)} style={style} suppressHydrationWarning>
       {value === trueValue ? (trueIcon || trueValue) : (falseIcon || falseValue)}
-    </a>
+    </Box>
   )
 }

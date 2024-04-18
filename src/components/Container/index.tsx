@@ -3,7 +3,7 @@ import { Container } from "@chakra-ui/react";
 
 export default function _Container(props: any) {
   return (
-    <Container {...props} maxW="6xl">
+    <Container {...props} maxW="5xl">
       {props.children}
     </Container>
   );

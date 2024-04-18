@@ -1,25 +1,25 @@
-import Link from 'next/link'
 import { IconDeer, DarkSwitch, LngSwitch, Trans, Container } from '@/components';
 import { AvatarBadge, Box, Center, Heading, IconButton, Menu, MenuButton, MenuDivider, MenuItem, MenuList, Text, VStack } from '@chakra-ui/react';
-import { HStack, Flex, Avatar, Divider } from '@chakra-ui/react';
+import { HStack, Flex, Divider } from '@chakra-ui/react';
 import { IconMenu2 } from '@tabler/icons-react';
+import { motion } from 'framer-motion';
+import Avatar from './Avatar';
+import Link from '../Link';
+
 
 export default function Header() {
   return (
-    <Box w='100%' my={12}>
+    <Box w='100%' my={12} position={'sticky'} top={0} zIndex={100} overflow={'hidden'} py={1}>
       <Box
-        className="w-full h-full bg-white/70 backdrop-blur"
-        style={{ borderBottom: '1px solid var(--color-gray)' }}
+        w={'100%'} h={'100%'} left={0} top={0}
+        position={'absolute'} zIndex={-1}
+        backdropFilter='auto' backdropBlur='8px'
       ></Box>
       <Container>
         <Flex justifyContent={"space-between"}>
           <HStack gap={3}>
             <Link href="/">
-              <Box border='1px' borderColor='gray' borderRadius={'100%'}>
-                <Avatar bg='none' icon={<IconDeer boxSize={6} color='dark' />} >
-                  {/* <AvatarBadge boxSize={'1em'} bg='green.500' /> */}
-                </Avatar>
-              </Box>
+              <Avatar />
             </Link>
             <VStack align="flex-start" justifyContent="space-around" gap={1}>
               <Heading size='sm'>Lemoo 鹿</Heading>
@@ -27,9 +27,9 @@ export default function Header() {
             </VStack>
           </HStack>
 
-          <HStack spacing={6} align={"center"} display={{ base: 'none', md: 'flex' }}>
-            <HStack spacing={10}>
-              <Link href="/blog">Blog</Link>
+          <HStack spacing={6} align={"center"} display={{ base: 'none', md: 'flex' }} >
+            <HStack spacing={10} fontWeight={500}>
+              <Link href="/blog" >Blog</Link>
               <Link href="/project">Project</Link>
             </HStack>
 

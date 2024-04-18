@@ -36,12 +36,3 @@ body {
   background-color: var(--color-white); */
   font-family: "Hind-Regular", "PingFang SC", "Arial", "Microsoft YaHei", sans-serif !important;
 }
-
-@media (prefers-color-scheme: dark) {
-  body {
-  }
-}
-
-a:hover {
-  text-decoration: none;
-}

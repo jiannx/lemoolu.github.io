@@ -1,7 +1,6 @@
 import { Page, Trans, CardGrid, CardItem, Card } from '@/components';
 import { Box, Button, CardBody, CardHeader, Heading, Stack, Image, Text, Card as Card2, HStack, VStack, Wrap, Flex, Center, GridItem } from '@chakra-ui/react';
 import { Metadata } from 'next';
-import Link from 'next/link';
 import { IconCurrentLocation, IconBrandWechat, IconMail, IconBrandWhatsapp, IconBrandTwitter } from '@tabler/icons-react';
 import { Post, postsGetList } from '@/services/posts';
 import { momentsGetList } from '@/services/moments';
@@ -11,7 +10,7 @@ export const metadata: Metadata = {
 }
 // backgroundImage: 'url("/images/banner.jpg"'
 
-export default async function (props) {
+export default async function () {
   const posts = await postsGetList();
   const moments = await momentsGetList();
 

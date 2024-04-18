@@ -3,6 +3,7 @@ import { Box, GridItem, Heading, Link, Text, LinkBox, LinkOverlay, Flex } from '
 import dayjs from 'dayjs';
 import { IconArrowUpRight } from '@tabler/icons-react';
 import { useRouter } from 'next/navigation'
+import { motion } from 'framer-motion'
 
 const Tags = {
   'blog': { icon: '📝' },
@@ -51,6 +52,9 @@ export function CardItem({
       _hover={link ? {
         backgroundColor: 'lightGray'
       } : {}}
+      as={motion.div}
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: link ? 0.9 : 1.02 }}
     >
       {(tag || link) &&
         <Flex position={'absolute'} w={'100%'} left={0} top={0} p={4} fontSize={'xs'} justifyContent={'space-between'}>
