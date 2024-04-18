@@ -1,5 +1,5 @@
 "use client"
-import { Box, GridItem, Heading, Link, Text, LinkBox, LinkOverlay, Flex } from '@chakra-ui/react'
+import { Box, GridItem, Flex } from '@chakra-ui/react'
 import dayjs from 'dayjs';
 import { IconArrowUpRight } from '@tabler/icons-react';
 import { useRouter } from 'next/navigation'
@@ -55,6 +55,17 @@ export function CardItem({
       as={motion.div}
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: link ? 0.9 : 1.02 }}
+      // initial={{ opacity: 0 }}
+      // viewport={{ once: true }}
+      // variants={{
+      //   open: {
+      //     y: 0,
+      //     opacity: 1,
+      //     transition: {
+      //       y: { stiffness: 1000, velocity: -100 }
+      //     }
+      //   },
+      // }}
     >
       {(tag || link) &&
         <Flex position={'absolute'} w={'100%'} left={0} top={0} p={4} fontSize={'xs'} justifyContent={'space-between'}>

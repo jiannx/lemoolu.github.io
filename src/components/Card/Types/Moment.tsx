@@ -1,4 +1,4 @@
-import { Flex, Box, Text, Link, Heading } from "@chakra-ui/react";
+import { Flex, Box, Link, Heading } from "@chakra-ui/react";
 import { CardItem } from "../CardItem";
 
 export default function Moment({

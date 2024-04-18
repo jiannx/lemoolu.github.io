@@ -1,11 +1,9 @@
 "use client"
 import ReactMarkdown from 'react-markdown';
-import style from './index.module.scss';
 import remarkGfm from 'remark-gfm'
-import hljs from 'highlight.js';
 import { useEffect, useState } from 'react';
-import { loadCss, removeNode } from './utils';
-import { Code, Heading, Image, Input, Link, List, ListItem, OrderedList, UnorderedList, useColorMode, Text } from '@chakra-ui/react';
+import { loadCss } from './utils';
+import { useColorMode } from '@chakra-ui/react';
 
 
 function getToc(str: string) {

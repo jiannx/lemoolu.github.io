@@ -1,10 +1,10 @@
-import { IconDeer, DarkSwitch, LngSwitch, Trans, Container } from '@/components';
+import { IconDeer, DarkSwitch, LngSwitch, Trans } from '@/components';
 import { AvatarBadge, Box, Center, Heading, IconButton, Menu, MenuButton, MenuDivider, MenuItem, MenuList, Text, VStack } from '@chakra-ui/react';
 import { HStack, Flex, Divider } from '@chakra-ui/react';
 import { IconMenu2 } from '@tabler/icons-react';
-import { motion } from 'framer-motion';
 import Avatar from './Avatar';
-import Link from '../Link';
+import Link from '../../Link';
+import Container from '../Container';
 
 
 export default function Header() {

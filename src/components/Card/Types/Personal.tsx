@@ -1,7 +1,7 @@
-import { Heading, Text, Flex, Avatar, SimpleGrid, VStack, Box, Center } from "@chakra-ui/react";
+import { Text, Flex, Avatar, SimpleGrid, VStack, Box } from "@chakra-ui/react";
 import { CardItem } from "../CardItem";
-import { IconDeer, DarkSwitch, LngSwitch, Trans, Container } from '@/components';
-import { IconCurrentLocation, IconBrandWechat, IconMail, IconBrandWhatsapp, IconBrandTwitter } from '@tabler/icons-react';
+import { IconDeer, Trans } from '@/components';
+import { IconCurrentLocation, IconBrandWechat, IconMail, IconBrandWhatsapp } from '@tabler/icons-react';
 
 
 const info = {

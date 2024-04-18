@@ -1,5 +1,5 @@
 import { postsGetList } from '@/services/posts';
-import { MarkdownRender } from '@/components';
+import { MarkdownRender, Page } from '@/components';
 import { Box, Text, Heading } from '@chakra-ui/react';
 
 /**
@@ -17,7 +17,7 @@ export default async function Posts({ params }: any) {
   const post = posts.find(x => x.hash === hash);
 
   return (
-    <>
+    <Page>
       <Heading mb={2}>{post?.title}</Heading>
       <Text mb={8}>
         {post?.date}
@@ -25,6 +25,6 @@ export default async function Posts({ params }: any) {
       <MarkdownRender>
         {post?.content || ''}
       </MarkdownRender>
-    </>
+    </Page>
   );
 }

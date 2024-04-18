@@ -1,6 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import classNames from "classnames";
 import React from "react";
+import Link from "../Link";
 
 interface IconSwitchProps {
   /** true对应的值 */
@@ -33,8 +34,10 @@ export function IconSwitch({
   }
 
   return (
-    <Box cursor={'pointer'} onClick={_onChange} className={classNames('block', className)} style={style} suppressHydrationWarning>
-      {value === trueValue ? (trueIcon || trueValue) : (falseIcon || falseValue)}
-    </Box>
+    <Link>
+      <Box cursor={'pointer'} onClick={_onChange} className={classNames('block', className)} style={style} suppressHydrationWarning>
+        {value === trueValue ? (trueIcon || trueValue) : (falseIcon || falseValue)}
+      </Box>
+    </Link>
   )
 }

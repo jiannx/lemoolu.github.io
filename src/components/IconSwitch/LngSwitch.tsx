@@ -1,7 +1,7 @@
 "use client"
 import { IconSwitch } from './IconSwitch';
-import { useEffect, useState } from 'react';
-import {  i18n, Lng, changeLanguage, I18nCookieKey } from '@/i18n';
+import { useState } from 'react';
+import {  i18n, Lng, changeLanguage } from '@/i18n';
 
 const useDark = function () {
   const [value, setModeState] = useState<string>(i18n.language || Lng.zhCN);

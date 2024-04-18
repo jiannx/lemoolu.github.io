@@ -1,14 +1,14 @@
 import React from "react";
-import Header from '../Header';
-import Bottom from '../Bottom';
-import Container from '../Container';
+import Header from './Header';
+import Bottom from './Bottom';
+import Container from "./Container";
 
-export default function Page(props: any) {
+export default function Template({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Header />
-      <Container>
-        {props.children}
+      <Container minH={'calc(100vh - 56px - 100px)'}>
+        {children}
       </Container>
       <Bottom />
     </>

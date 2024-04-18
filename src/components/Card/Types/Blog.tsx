@@ -1,4 +1,4 @@
-import { Heading, Text, Flex, Link } from "@chakra-ui/react";
+import { Heading, Text, Flex } from "@chakra-ui/react";
 import { CardItem } from "../CardItem";
 
 export default function Blog({

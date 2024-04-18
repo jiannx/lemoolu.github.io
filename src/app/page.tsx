@@ -1,7 +1,6 @@
-import { Page, Trans, CardGrid, CardItem, Card } from '@/components';
-import { Box, Button, CardBody, CardHeader, Heading, Stack, Image, Text, Card as Card2, HStack, VStack, Wrap, Flex, Center, GridItem } from '@chakra-ui/react';
+import { Trans, CardGrid, Card, Page } from '@/components';
+import { Box, Heading, Text } from '@chakra-ui/react';
 import { Metadata } from 'next';
-import { IconCurrentLocation, IconBrandWechat, IconMail, IconBrandWhatsapp, IconBrandTwitter } from '@tabler/icons-react';
 import { Post, postsGetList } from '@/services/posts';
 import { momentsGetList } from '@/services/moments';
 
@@ -15,7 +14,7 @@ export default async function () {
   const moments = await momentsGetList();
 
   return (
-    <>
+    <Page>
       <Box my={8}>
         <Text fontSize={'xl'} fontWeight={500}>这里记录我日常的一些思考，希望遇到同频的朋友。</Text>
         {/* <Text fontSize={'xl'} fontWeight={500}>我目前专注的方向是</Text> */}
@@ -64,6 +63,6 @@ export default async function () {
 
       <Heading mt={10} mb={6}>Personal</Heading>
       <Card.Personal />
-    </>
+    </Page>
   )
 }

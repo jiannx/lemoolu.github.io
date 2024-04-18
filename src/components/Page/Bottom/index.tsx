@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Center } from "@chakra-ui/react";
-import { Container } from '@/components';
+import Container from '../Container';
 
 export default function Bottom() {
   return (
