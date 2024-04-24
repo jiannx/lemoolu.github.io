@@ -19,10 +19,9 @@ const theme = extendTheme({
   colors: {
     white: '#fff',
     black: '#000',
-    // primary: "#D23669",
+    primary: "#D23669",
     // secondary: "#F4D0B0",
     // contrast: "#05A8B4",
-    brand: baseTheme.colors.red,
     gray: {
       50: '#F9F9F9',
       100: '#EEE',
@@ -40,7 +39,7 @@ const theme = extendTheme({
         _dark: 'gray.600',
       },
       lightGray: {
-        default: 'gray.100',
+        default: 'gray.50',
         _dark: 'gray.800',
       },
       dark: {

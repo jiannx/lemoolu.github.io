@@ -1,5 +1,5 @@
 import { postsGetList } from '@/services/posts';
-import { MarkdownRender, Page } from '@/components';
+import { Container, MarkdownRender, Page } from '@/components';
 import { Box, Text, Heading } from '@chakra-ui/react';
 
 /**
@@ -12,19 +12,21 @@ export const generateStaticParams = async () => {
 };
 
 export default async function Posts({ params }: any) {
-  const { hash } = params;  
+  const { hash } = params;
   const posts = await postsGetList();
   const post = posts.find(x => x.hash === hash);
 
   return (
-    <Page>
-      <Heading mb={2}>{post?.title}</Heading>
-      <Text mb={8}>
-        {post?.date}
-      </Text>
-      <MarkdownRender>
-        {post?.content || ''}
-      </MarkdownRender>
+    <Page isFull={true}>
+      <Container maxW={'4xl'}>
+        <Heading my={8}>{post?.title}</Heading>
+        <Text mb={8}>
+          {post?.date}
+        </Text>
+        <MarkdownRender>
+          {post?.content || ''}
+        </MarkdownRender>
+      </Container>
     </Page>
   );
 }
