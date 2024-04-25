@@ -1,7 +1,7 @@
-"use client"
+import { IconSunLow, IconMoonStars } from '@tabler/icons-react';
 import { IconSwitch } from './IconSwitch';
-import { useState } from 'react';
-import {  i18n, Lng, changeLanguage } from '@/i18n';
+import { useEffect, useState } from 'react';
+import {  i18n, Lng, changeLanguage, I18nCookieKey } from '@/i18n';
 
 const useDark = function () {
   const [value, setModeState] = useState<string>(i18n.language || Lng.zhCN);
@@ -16,7 +16,7 @@ const useDark = function () {
 export function LngSwitch({
   className
 }: {
-  className?: string
+  className: string
 }) {
   const { value, onChange } = useDark();
   return (

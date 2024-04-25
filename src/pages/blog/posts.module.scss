@@ -1,0 +1,14 @@
+.posts {
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px dashed var(--color-gray);
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  margin-bottom: 8px;
+  color: var(--color-dark);
+
+  &:hover {
+    border-bottom: 1px dashed var(--color-dark);
+  }
+}
