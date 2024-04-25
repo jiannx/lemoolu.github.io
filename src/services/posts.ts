@@ -1,4 +1,4 @@
-import glob from 'glob';
+import { glob } from 'glob';
 import path from 'path';
 import { mdPath } from '@/common';
 import fs from 'fs';
@@ -7,7 +7,6 @@ import matter from "gray-matter";
 import crypto from 'crypto';
 import dayjs from 'dayjs';
 
-const glob2 = util.promisify(glob);
 
 const getFileContent = (filePath: string) => {
   return fs.readFileSync(filePath, "utf8");
@@ -33,7 +32,8 @@ export interface Post {
 }
 
 export async function postsGetList(): Promise<Post[]> {
-  const files = await glob2(path.resolve(mdPath, "**/*.md"));
+  // const files: any[] = [];
+  const files = await glob(path.resolve(mdPath, "**/*.md"));
   const posts: Post[] = [];
   // console.log(files);
   files.forEach((file: string) => {
@@ -46,7 +46,8 @@ export async function postsGetList(): Promise<Post[]> {
     // 标题，日期，标签，正文
     const { data: { title, date, tags, description }, content } = matter(source);
     posts.push({
-      hash: crypto.createHash('md5').update(file).digest('hex') + '-' +filename,
+      // hash: crypto.createHash('md5').update(file).digest('hex') + '-' +filename,
+      hash: encodeURIComponent(filename),
       title: title || filename,
       description: description || '',
       content: content || '',

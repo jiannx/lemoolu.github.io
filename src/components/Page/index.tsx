@@ -1,24 +1,26 @@
 import React from "react";
-import { useRouter } from 'next/router';
-import styles from './Page.module.scss';
-import Header from '../Header';
-import Bottom from '../Bottom';
-import classnames from 'classnames';
-import Head from 'next/head'
+import Header from './Header';
+import Bottom from './Bottom';
+import Container from "../Container";
+import { Box } from '@chakra-ui/react';
 
-export default function Page(props: any) {
+export default function Template({
+  children,
+  isFull = false,
+}: {
+  children: React.ReactNode;
+  isFull?: boolean;
+}) {
   return (
     <>
-      <Head>
-        <title>LemooLu&apos;s Blog</title>
-      </Head>
-      <div className={classnames('min-h-full', props.className)}>
-        <Header />
-        <div className={classnames('pt-14', { [styles.container]: props.container })} style={props.style}>
-          {props.children}
-        </div>
-        <Bottom />
-      </div >
+      <Header />
+      {isFull ?
+        children :
+        <Container>
+          {children}
+        </Container>
+      }
+      <Bottom />
     </>
   )
 }
