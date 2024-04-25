@@ -36,7 +36,7 @@ export function IconSwitch({
   return (
     <Link>
       <Box cursor={'pointer'} onClick={_onChange} className={classNames('block', className)} style={style} suppressHydrationWarning>
-        {value === trueValue ? (trueIcon || trueValue) : (falseIcon || falseValue)}
+        {value === trueValue ? (falseIcon || falseValue) : (trueIcon || trueValue)}
       </Box>
     </Link>
   )
