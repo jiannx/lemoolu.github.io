@@ -6,6 +6,7 @@ import { momentsGetList } from '@/services/moments';
 
 export const metadata: Metadata = {
   title: 'LemooLu\'s Blog',
+  description: "LemooLu\'s Blog, web, web-developer, frontend, react",
 }
 // backgroundImage: 'url("/images/banner.jpg"'
 
@@ -15,7 +16,7 @@ export default async function () {
 
   return (
     <Page isFull={true}>
-      <Flex flexDirection={{ base: 'column', lg: 'row' }} mt={-12}>
+      <Flex flexDirection={{ base: 'column-reverse', lg: 'row' }} mt={-12}>
         <Center
           w={{ base: '100%', lg: '40%' }}
           mt={{ base: 16, lg: 0 }}
@@ -31,7 +32,7 @@ export default async function () {
             <Typed
               strings={[
                 'Do not go gentle into that good night. 🏕️',
-                '这里记录我日常的一些思考，希望遇到同频的朋友。',
+                '这里记录日常的一些思考，希望遇到同频的朋友。',
                 // '我目前专注的方向是 独立开发'
               ]}
             >
@@ -39,15 +40,12 @@ export default async function () {
             {/* <Trans i18nKey='doNotGoGentle' /> 🏕️
             <br />
             <Trans i18nKey='rageAgainst' /> */}
-
-            {/* <Text fontSize={'xl'} fontWeight={500}>这里记录我日常的一些思考，希望遇到同频的朋友。</Text> */}
-            {/* <Text fontSize={'xl'} fontWeight={500}>我目前专注的方向是</Text> */}
           </Text>
         </Center>
         <Box
           w={{ base: '100%', lg: '60%' }}
           h={{ base: '50vh', lg: '100vh' }}
-          backgroundImage={'/images/banner.jpg'}
+          backgroundImage={'/images/banner.webp'}
           backgroundSize={'cover'}
           transform={'rotateY(180deg)'}
         ></Box>
@@ -107,9 +105,6 @@ export default async function () {
           ]}></Gallery>
         </CardGrid> */}
 
-
-        {/* <Heading mt={10} mb={6}>Personal</Heading> */}
-        {/* <Card.Personal /> */}
       </Container>
     </Page>
   )

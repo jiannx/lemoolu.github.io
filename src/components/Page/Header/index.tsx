@@ -9,7 +9,7 @@ import Container from '../../Container';
 
 export default function Header() {
   return (
-    <Box w='100%' h={12} position={'sticky'} top={0} zIndex={100} overflow={'hidden'} px={4}>
+    <Box w='100%' h={12} position={'sticky'} top={0} zIndex={100} px={4}>
       <Box
         w={'100%'} h={'100%'} left={0} top={0}
         position={'absolute'} zIndex={-1}
@@ -42,20 +42,20 @@ export default function Header() {
               icon={<IconMenu2 />}
               variant='ghost'
             />
-            <MenuList>
+            <MenuList border={0} borderRadius={4} minW={40}>
               <MenuItem as="a" href="/blog">
                 Blog
               </MenuItem>
               <MenuItem as="a" href="/project">
                 Project
               </MenuItem>
-              <MenuDivider />
+              <MenuDivider borderColor={'gray'} />
               <MenuItem>
                 <DarkSwitch />
               </MenuItem>
-              <MenuItem>
+              {/* <MenuItem>
                 <LngSwitch />
-              </MenuItem>
+              </MenuItem> */}
             </MenuList>
           </Menu>
         </Box>

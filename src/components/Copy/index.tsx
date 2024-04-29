@@ -9,7 +9,6 @@ export default function Copy({ copyTip, copyData, children }: {
   copyData: string;
   children: any;
 }) {
-
   const [isCopied, setIsCopied] = useState(false);
 
   return (
@@ -26,7 +25,7 @@ export default function Copy({ copyTip, copyData, children }: {
         <Box position={'relative'}>
           {children}
           {isCopied &&
-            <Box position={'absolute'} bottom={0} right={0} bg={'dark'} borderRadius={'100%'} >
+            <Box position={'absolute'} bottom={0} right={0} bg={'white'} borderRadius={'100%'} >
               <IconCircleCheckFilled stroke={1} size={12} color="green" />
             </Box>
           }

@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+const withBundleAnalyzer = require('@next/bundle-analyzer')()
 
 const nextConfig = {
   output: 'export',
@@ -9,7 +10,7 @@ const nextConfig = {
       use: 'raw-loader',
     })
     return config
-  },
+  }
 }
 
-module.exports = nextConfig;
+module.exports = process.env.ANALYZE === 'true' ? withBundleAnalyzer(nextConfig) : nextConfig

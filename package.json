@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next export"
+    "export": "next export",
+    "analyze": "ANALYZE=true npm run build"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
@@ -16,10 +17,9 @@
     "@emotion/styled": "^11.11.5",
     "@tabler/icons": "^3.2.0",
     "@tabler/icons-react": "^3.2.0",
+    "ahooks": "^3.7.11",
     "classnames": "^2.5.1",
     "dayjs": "^1.11.10",
-    "eslint": "^9.0.0",
-    "eslint-config-next": "^14.2.1",
     "framer-motion": "^11.1.1",
     "github-markdown-css": "^5.5.1",
     "glob": "^10.3.12",
@@ -46,6 +46,9 @@
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.38",
     "raw-loader": "^4.0.2",
-    "sass": "^1.75.0"
+    "sass": "^1.75.0",
+    "@next/bundle-analyzer": "^14.2.3",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "^14.2.1"
   }
 }
