@@ -3,7 +3,6 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm'
 import { useEffect, useState } from 'react';
 import { loadCss } from './utils';
-import { useColorMode } from '@chakra-ui/react';
 
 
 function getToc(str: string) {
@@ -67,43 +66,30 @@ function getToc(str: string) {
 
 
 export default function MarkdownRender({ children }: any) {
-  const toc = getToc(children);
-  const [state, setState] = useState(false);
-  const { colorMode, toggleColorMode } = useColorMode();
+  // const toc = getToc(children);
+
 
   useEffect(() => {
     // 
   }, []);
 
   useEffect(() => {
-    if (!colorMode) {
-      return;
-    }
-    // removeNode('github-css');
-    loadCss(`/css/github/github-markdown-${colorMode}.css`, 'github-css');
-    // removeNode('highlight-css');
-    loadCss(`/css/highlight/${colorMode}.min.css`, 'highlight-css');
+    // // removeNode('github-css');
+    // loadCss(`/css/github/github-markdown-${colorMode}.css`, 'github-css');
+    // // removeNode('highlight-css');
+    // loadCss(`/css/highlight/${colorMode}.min.css`, 'highlight-css');
 
-    setTimeout(() => {
-      setState(true);
-      // hljs.highlightAll();
-    }, 200)
-  }, [colorMode]);
-
-  if (!state) {
-    return null;
-  }
+  }, []);
 
   return (
-    <div className="markdown-body" style={{ background: 'none' }}>
+    <article className="markdown-body prose w-full max-w-full" style={{ background: 'none' }}>
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
       // components={MdComponents}
       >
         {children}
         {/* {markdown} */}
-
       </ReactMarkdown>
-    </div>
+    </article>
   )
 }

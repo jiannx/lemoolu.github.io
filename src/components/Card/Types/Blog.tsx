@@ -1,4 +1,3 @@
-import { Heading, Text, Flex } from "@chakra-ui/react";
 import { CardItem } from "../CardItem";
 
 export default function Blog({
@@ -14,11 +13,11 @@ export default function Blog({
 }) {
   return (
     <CardItem tag="blog" link={href}>
-      <Flex direction={'column'} h={'100%'} justifyContent={'flex-end'}>
-        <Text fontSize={'xs'}>{data}</Text>
-        <Heading size={'lg'}>{title}</Heading>
-        <Text>{desc}</Text>
-      </Flex>
+      <div className="h-full flex flex-col justify-end">
+        <span className="text-sm">{data}</span>
+        <p className="font-semibold text-lg">{title}</p>
+        <span>{desc}</span>
+      </div>
     </CardItem>
   );
 }

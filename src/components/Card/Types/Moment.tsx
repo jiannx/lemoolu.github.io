@@ -1,4 +1,3 @@
-import { Flex, Box, Link, Heading } from "@chakra-ui/react";
 import { CardItem } from "../CardItem";
 
 export default function Moment({
@@ -11,15 +10,13 @@ export default function Moment({
   fromLink: string,
 }) {
   return (
-    <CardItem rowSpan={1} colSpan={1} tag="moment">
-      <Flex direction={'column'} h={'100%'} justifyContent={'flex-end'}>
-        <Box>
-          <Heading fontSize={'lg'}>{title}</Heading>
-        </Box>
-        <Box textAlign={'right'} mt={4}>
-          <Link size={'xs'} href={fromLink} target="_blank">--{fromTitle}</Link>
-        </Box>
-      </Flex>
+    <CardItem tag="moment">
+      <div className="h-full flex flex-col justify-end">
+        <h2 className="font-semibold text-lg">{title}</h2>
+        <div className="text-right mt-4 text-sm">
+          <a href={fromLink} target="_blank">--{fromTitle}</a>
+        </div>
+      </div>
     </CardItem>
   );
 }

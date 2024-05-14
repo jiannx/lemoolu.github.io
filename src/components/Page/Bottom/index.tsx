@@ -1,70 +1,49 @@
 import React from "react";
 import Container from '../../Container';
-import { Text, Flex, Avatar, SimpleGrid, VStack, Box, Center, Heading, HStack, } from "@chakra-ui/react";
 import { IconDeer, Trans, Link, Copy } from '@/components';
 import { IconCurrentLocation, IconBrandWechat, IconMail, IconBrandWhatsapp, IconBrandX } from '@tabler/icons-react';
 
 export default function Bottom() {
+
   return (
-    <Box mt={100} backgroundColor={'lightGray'}>
-      <Container>
-        <Flex
-          direction={{
-            base: 'column',
-            md: 'row',
-          }}
-          align={'center'}
-          py={20}
-        >
-          <Box m={10}>
-            <Avatar bg={'dark'} size='xl' icon={<IconDeer boxSize={14} color='white' />} ></Avatar>
-          </Box>
-          <Box>
-            <Heading size='md' mb={2}>Lemoo 鹿</Heading>
-            <Text mb={2}>Indie Hacker & Digital Nomad & Outdoor</Text>
-            <HStack gap={4}>
-              <Copy copyTip="Copy Wechat" copyData="lomo_hao">
-                <IconBrandWechat stroke={1} />
-              </Copy>
-              <Copy copyTip="Copy Email" copyData="lemoo.lu@gmail.com">
-                <IconMail stroke={1} />
-              </Copy>
-              {/* <Link>
+    <Container className="bg-base-200 mt-24">
+      <footer className="flex flex-col py-10 items-center h-96 justify-between pc:flex-row pc:justify-start">
+        <aside className="flex flex-col items-center text-center pc:flex-row pc:text-left">
+          <div className="w-32 h-32 rounded-full bg-base-content flex justify-center items-center">
+            <IconDeer className="w-20 h-20 text-base-100" />
+          </div>
+          <div className="px-6">
+            <h1 className="text-2xl">Jiann 鹿</h1>
+            <p>Indie Hacker & Digital Nomad & Outdoor</p>
+          </div>
+        </aside>
+        <nav className="m-10">
+          <h6 className="footer-title text-center pc:text-left">Social</h6>
+          <div className="grid grid-flow-col gap-4">
+            <Copy copyTip="Copy Wechat" copyData="lomo_hao">
+              <IconBrandWechat stroke={1} />
+            </Copy>
+            <Copy copyTip="Copy Email" copyData="lemoo.lu@gmail.com">
+              <IconMail stroke={1} />
+            </Copy>
+            {/* <Link>
                 <IconBrandWhatsapp stroke={1} />
               </Link> */}
+            <div className="tooltip" data-tip="Click to open">
               <Link href="https://twitter.com/LemooLu" target="_blank">
                 <IconBrandX stroke={1} />
               </Link>
-              <Copy copyTip="Hangzhou, China" copyData="Hangzhou, China">
-                <IconCurrentLocation stroke={1} />
-              </Copy>
-            </HStack>
-          </Box>
-
-          {/* <SimpleGrid flexWrap={'wrap'} columns={{ base: 1, md: 4 }}>
-            <VStack m={4}>
+            </div>
+            <Copy copyTip="Hangzhou, China" copyData="Hangzhou, China">
               <IconCurrentLocation stroke={1} />
-              <Trans i18nKey='addressInfo' />
-            </VStack>
-            <VStack m={4}>
-              <IconBrandWechat stroke={1} />
-              <Text>lomo_hao</Text>
-            </VStack>
-            <VStack m={4}>
-              <IconBrandWhatsapp stroke={1} />
-              <Text>whatsapp</Text>
-            </VStack>
-            <VStack m={4}>
-              <IconMail stroke={1} />
-              <Text>lemmoo.lu@gmail.com</Text>
-            </VStack>
-          </SimpleGrid> */}
-        </Flex>
+            </Copy>
+          </div>
+        </nav>
+        {/* <aside>
+        <p>Copyright © 2024 - All right reserved by LemoooLu</p>
+      </aside> */}
+      </footer>
+    </Container>
 
-        <Center h={8} fontSize={14}>
-          © 2024 by LemoooLu
-        </Center>
-      </Container>
-    </Box>
-  )
+  );
 }
