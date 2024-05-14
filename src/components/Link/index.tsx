@@ -1,7 +1,6 @@
 "use client"
 import Link from 'next/link'
 import { motion } from 'framer-motion';
-import { Link as ChakraLink, Tooltip } from "@chakra-ui/react";
 
 
 export default function ({
@@ -10,14 +9,13 @@ export default function ({
   ...others
 }: any) {
   const child = (
-    <ChakraLink
-      as={motion.a}
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
+    <motion.a
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
       {...others}
     >
       {children}
-    </ChakraLink>
+    </motion.a>
   );
   if (href) {
     return (

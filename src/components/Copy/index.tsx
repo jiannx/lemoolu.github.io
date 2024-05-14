@@ -1,5 +1,4 @@
 "use client"
-import { Tooltip, Box } from "@chakra-ui/react";
 import Link from "../Link";
 import { useState } from "react";
 import { IconCircleCheckFilled } from '@tabler/icons-react';
@@ -21,16 +20,16 @@ export default function Copy({ copyTip, copyData, children }: {
         setIsCopied(false);
       }}
     >
-      <Tooltip label={isCopied ? 'Copied!' : copyTip} closeOnClick={false}>
-        <Box position={'relative'}>
+      <div className="tooltip" data-tip={isCopied ? 'Copied!' : copyTip}>
+        <div className="relative">
           {children}
           {isCopied &&
-            <Box position={'absolute'} bottom={0} right={0} bg={'white'} borderRadius={'100%'} >
+            <div className="absolute bottom-0 right-0 bg-base-100 rounded-full" >
               <IconCircleCheckFilled stroke={1} size={12} color="green" />
-            </Box>
+            </div>
           }
-        </Box>
-      </Tooltip>
+        </div>
+      </div>
     </Link>
   )
 }

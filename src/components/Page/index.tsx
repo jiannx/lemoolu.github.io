@@ -2,7 +2,6 @@ import React from "react";
 import Header from './Header';
 import Bottom from './Bottom';
 import Container from "../Container";
-import { Box } from '@chakra-ui/react';
 
 export default function Template({
   children,
@@ -14,12 +13,7 @@ export default function Template({
   return (
     <>
       <Header />
-      {isFull ?
-        children :
-        <Container>
-          {children}
-        </Container>
-      }
+      {isFull ? children : <Container>{children}</Container>}
       <Bottom />
     </>
   )

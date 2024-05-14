@@ -1,6 +1,5 @@
 import { postsGetList } from '@/services/posts';
-import { Container, MarkdownRender, Page } from '@/components';
-import { Box, Text, Heading } from '@chakra-ui/react';
+import { MarkdownRender, Page } from '@/components';
 
 /**
  用于静态生成文件
@@ -17,16 +16,18 @@ export default async function Posts({ params }: any) {
   const post = posts.find(x => x.hash === hash);
 
   return (
-    <Page isFull={true}>
-      <Container maxW={'4xl'}>
-        <Heading my={8}>{post?.title}</Heading>
-        <Text mb={8}>
+    <Page>
+      <div className={`max-w-4xl mx-auto px-4 mt-24`}>
+        <h1 className='my-8 text-3xl'>
+          {post?.title}
+        </h1>
+        <div className='mb-4'>
           {post?.date}
-        </Text>
+        </div>
         <MarkdownRender>
-          {post?.content || ''}
+          {post?.content}
         </MarkdownRender>
-      </Container>
+      </div>
     </Page>
   );
 }
