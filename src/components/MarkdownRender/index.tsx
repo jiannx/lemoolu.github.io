@@ -66,7 +66,7 @@ function getToc(str: string) {
 
 
 export default function MarkdownRender({ children }: any) {
-  const toc = getToc(children);
+  // const toc = getToc(children);
 
 
   useEffect(() => {
