@@ -31,12 +31,12 @@ export interface Post {
   date: string;
 }
 
-export async function postsGetList(): Promise<Post[]> {
+export async function postsGetList(postsNum?: number): Promise<Post[]> {
   // const files: any[] = [];
   const files = await glob(path.resolve(mdPath, "**/*.md"));
   const posts: Post[] = [];
   // console.log(files);
-  files.forEach((file: string) => {
+  files.slice(0, postsNum || files.length).forEach((file: string) => {
     // 扩展名
     const extname = path.extname(file);
     // 文件名
