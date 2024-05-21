@@ -1,4 +1,4 @@
-import { Trans, CardGrid, Card, Page, Container, Typed } from '@/components';
+import { CardGrid, Card, Page, Container, Typed } from '@/components';
 import { Metadata } from 'next';
 import { Post, postsGetList } from '@/services/posts';
 import { momentsGetList } from '@/services/moments';
@@ -9,15 +9,15 @@ export const metadata: Metadata = {
 }
 
 export default async function () {
-  const posts = await postsGetList();
+  const posts = await postsGetList(6);
   const moments = await momentsGetList();
 
   return (
     <Page isFull={true}>
       <div className='flex flex-row h-screen flex-wrap-reverse'>
-        <div className='w-full flex-col flex items-center justify-center pc:w-2/5'>
+        <div className='w-full h-1/2 flex-col flex items-center justify-center pc:w-2/5 pc:h-full'>
           <p className='text-6xl mb-6 font-light'>
-            Jiann <span className='text-primary'>鹿</span>
+            Jiann <span className='text-primary'>Lu</span>
           </p>
           <Typed
             strings={[
@@ -28,7 +28,7 @@ export default async function () {
           />
         </div>
         <div
-          className="w-full h-full bg-[url('/images/banner.webp')] bg-cover pc:w-3/5"
+          className="w-full h-1/2 bg-[url('/images/banner.webp')] bg-cover pc:w-3/5 pc:h-full"
           style={{
             transform: 'rotateY(180deg)'
           }}
@@ -49,7 +49,7 @@ export default async function () {
         </CardGrid>
 
         <CardGrid title='Posts'>
-          {posts.slice(0, 6).map((post: Post) => (
+          {posts.map((post: Post) => (
             <Card.Blog
               key={post.hash}
               title={post.title}
