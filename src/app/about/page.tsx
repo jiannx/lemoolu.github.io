@@ -4,24 +4,24 @@ import { IconBrandWechat, IconBrandX, IconCurrentLocation, IconMail } from "@tab
 export default function () {
   return (
     <Page>
-      <div className="rounded-2xl overflow-hidden bg-base-100 shadow-xl mt-40 flex flex-row">
+      <div className="rounded-2xl overflow-hidden shadow-xl mt-40 flex flex-row border border-secondary-content">
         <div className="w-1/3 h-100 bg-[url('/images/aboutbg.jpg')] bg-cover">
         </div>
         <div className="w-2/3 max-w-600 p-12 prose">
           <h2>Jiann Lu</h2>
           <p>
             Ten years of full-stack Engineer, Focusing on Application and Website development
-            (Indie Hacker & Digital Nomad & Outdoor)
           </p>
-          <p>
-            Previously
-          </p>
+          <h4>Previously</h4>
           <ul>
             <li>
               Expert front-end development at Shuopan Intelligent Technology working on Low-Code Development Platform
             </li>
             <li>
               Staff full-stack development at Alibaba working on Digital agriculture SaaS and IoT Platform.
+            </li>
+            <li>
+              Front-end development at Didi working on car service marketing platform and energy-related business.
             </li>
           </ul>
 

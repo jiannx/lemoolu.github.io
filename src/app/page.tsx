@@ -49,7 +49,7 @@ export default async function () {
         </CardGrid>
 
         <CardGrid title='Posts'>
-          {posts.slice(0, 6).map((post: Post) => (
+          {posts.map((post: Post) => (
             <Card.Blog
               key={post.hash}
               title={post.title}

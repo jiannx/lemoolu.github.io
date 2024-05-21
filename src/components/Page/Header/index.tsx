@@ -44,9 +44,9 @@ export default function Header() {
           <li>
             <Link href="/blog">BLOG</Link>
           </li>
-          <li>
+          {/* <li>
             <Link href="/project">PROJECT</Link>
-          </li>
+          </li> */}
         </ul>
         <DarkSwitch />
         <Link href="/about">
