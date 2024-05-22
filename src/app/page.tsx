@@ -60,7 +60,7 @@ export default async function () {
           ))}
         </CardGrid>
 
-        <CardGrid title='Gallery'>
+        <CardGrid title='Gallery' grid={false}>
           <div className="carousel carousel-center w-full space-x-4">
             {[
               '/images/i1.jpg',

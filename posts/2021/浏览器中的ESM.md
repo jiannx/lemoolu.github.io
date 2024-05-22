@@ -2,6 +2,7 @@
 title: 浏览器中的ESM
 date: 2020-11-02
 tags: web
+description: 介绍下何为ESM，和现有包管理的差异，为什么要使用ESM
 ---
 
 # 一、前言

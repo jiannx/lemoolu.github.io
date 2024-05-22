@@ -8,7 +8,7 @@ import { IconMenu2 } from '@tabler/icons-react'
 // import classNames from 'classnames';
 
 
-export default function Header() {
+export default function Header({}: {}) {
   // const w = typeof window !== 'undefined' ? window : null;
   // const [isTop, setIsTop] = useState(w ? w?.document.documentElement.scrollTop === 0 : true);
 

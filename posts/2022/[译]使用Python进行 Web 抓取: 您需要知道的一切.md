@@ -1,6 +1,7 @@
 ---
 date: 2022-07-03
 tags: web
+description: python中常用的数据分析实现
 ---
 
 本文主要是针对 [Web Scraping with Python: Everything you need to know (2022)](https://www.scrapingbee.com/blog/web-scraping-101-with-python/) 的翻译，适合入门网页爬取和页面调试，如有任何不正确请求指正

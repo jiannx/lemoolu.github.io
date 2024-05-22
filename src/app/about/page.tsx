@@ -10,7 +10,7 @@ export default function () {
         <div className="w-2/3 max-w-600 p-12 prose">
           <h2>Jiann Lu</h2>
           <p>
-            Ten years of full-stack Engineer, Focusing on Application and Website development
+            Ten years of full-stack Engineer, Focus on Internet product design and development
           </p>
           <h4>Previously</h4>
           <ul>
