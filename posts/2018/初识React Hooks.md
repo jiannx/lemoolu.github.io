@@ -1,7 +1,7 @@
 ---
-title: 初识React Hooks
 date: 2018-10-15
 tags: web
+description: React Hooks 在不使用类的情况下实现 state 和其他功能，将在 React 16.7 中支持。主要解决了组件间重用状态逻辑困难和复杂组件难以理解的问题
 ---
 
 ## 基本

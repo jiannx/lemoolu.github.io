@@ -14,9 +14,9 @@ export default function Blog({
   return (
     <CardItem tag="blog" link={href}>
       <div className="h-full flex flex-col justify-end">
-        <span className="text-sm">{data}</span>
-        <p className="font-semibold text-lg">{title}</p>
-        <span>{desc}</span>
+        <span className="text-sm mb-2">{data}</span>
+        <h2 className="font-semibold text-lg mb-2">{title}</h2>
+        <span className="text-sm">{desc}</span>
       </div>
     </CardItem>
   );

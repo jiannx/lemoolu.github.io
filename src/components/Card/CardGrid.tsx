@@ -1,14 +1,18 @@
 
-export function CardGrid({ title, children }: {
+export function CardGrid({ title, children, grid = true }: {
   title?: string;
   children?: any;
+  grid?: boolean;
 }) {
   return (
     <div className="w-full">
-      {title && <h1 className='mt-20 mb-12 text-4xl'>{title}</h1>}
-      <div className='flex justify-between flex-wrap'>
-        {children}
-      </div>
+      {title && <h2 className='mt-12 mb-12 text-3xl'>{title}</h2>}
+      {grid ?
+        <div className='grid grid-cols-1 gap-6 pc:grid-cols-3'>
+          {children}
+        </div>
+        : children
+      }
     </div>
   )
 }

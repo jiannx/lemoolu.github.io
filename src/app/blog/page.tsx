@@ -18,20 +18,22 @@ export default async function () {
   postsOfYear.sort(x => x[0]);
 
   return (
-    <Page>
-      <CardGrid title='Blogs'>
-        {postsOfYear.map(year => {
-          return year[1].map(p =>
-            <Card.Blog
-              key={p.hash}
-              title={p.title}
-              desc={p.description}
-              data={p.date}
-              href={`/blog/${p.hash}`}
-            />
-          );
-        })}
-      </CardGrid>
+    <Page size='lg'>
+      {postsOfYear.map(year => (
+        <CardGrid title={year[0] as any}>
+          {
+            year[1].map(p => (
+              <Card.Blog
+                key={p.hash}
+                title={p.title}
+                desc={p.description}
+                data={p.date}
+                href={`/blog/${p.hash}`}
+              />
+            ))
+          }
+        </CardGrid>
+      ))}
     </Page>
   )
 }

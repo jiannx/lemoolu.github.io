@@ -15,6 +15,13 @@ export interface Moment {
 export async function momentsGetList(): Promise<Moment[]> {
   return [
     {
+      hash: '4',
+      content: "不要陷入工具的陷阱，以最简的方式去组织个人知识库。知识库的目的不是收集，而是整理",
+      fromTitle: '小心效率陷阱：為什麼你不需要"第二大腦"',
+      fromLink: 'https://www.youtube.com/watch?v=5kNCcpM61eo',
+      date: ''
+    },
+    {
       hash: '3',
       content: '互联网的本质是移动比特（信息）',
       fromTitle: '《数字化生存》',

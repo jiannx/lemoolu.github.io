@@ -22,10 +22,12 @@ module.exports = {
         light: {
           ...require("daisyui/src/theming/themes")["light"],
           primary: "#D23669",
+          secondary: '#3E4C5B',
         },
         dark: {
           ...require("daisyui/src/theming/themes")["dark"],
           primary: "#D23669",
+          secondary: '#191E24',
         },
       },
     ],
