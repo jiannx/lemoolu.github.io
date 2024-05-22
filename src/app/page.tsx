@@ -14,7 +14,7 @@ export default async function () {
 
   return (
     <Page>
-      <div className='flex flex-row h-screen flex-wrap-reverse -mt-16'>
+      <div className='flex flex-row h-[80vh] flex-wrap-reverse -mt-16 pc:h-screen'>
         <div className='w-full h-1/2 flex-col flex items-center justify-center pc:w-2/5 pc:h-full'>
           <p className='text-6xl mb-6 font-light'>
             Jiann <span className='text-primary'>Lu</span>

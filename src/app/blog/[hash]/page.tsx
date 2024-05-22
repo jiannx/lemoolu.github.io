@@ -17,7 +17,7 @@ export default async function Posts({ params }: any) {
 
   return (
     <Page>
-      <div className={`max-w-4xl mx-auto px-4 mt-24`}>
+      <div className={`max-w-4xl mx-auto px-4 mt-6`}>
         <h1 className='my-8 text-3xl'>
           {post?.title}
         </h1>

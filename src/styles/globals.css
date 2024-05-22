@@ -37,3 +37,9 @@ body {
   background-color: var(--color-white); */
   font-family: "Hind-Regular", "PingFang SC", "Arial", "Microsoft YaHei", sans-serif !important;
 }
+
+.markdown {
+  h1 {
+    font-size: 2rem;
+  }
+}
