@@ -1,4 +1,4 @@
-import { CardGrid, Card, Page, Container, Typed } from '@/components';
+import { CardGrid, Card, Page, Typed } from '@/components';
 import { Metadata } from 'next';
 import { Post, postsGetList } from '@/services/posts';
 import { momentsGetList } from '@/services/moments';
@@ -13,8 +13,8 @@ export default async function () {
   const moments = await momentsGetList();
 
   return (
-    <Page isFull={true}>
-      <div className='flex flex-row h-screen flex-wrap-reverse'>
+    <Page>
+      <div className='flex flex-row h-screen flex-wrap-reverse -mt-16'>
         <div className='w-full h-1/2 flex-col flex items-center justify-center pc:w-2/5 pc:h-full'>
           <p className='text-6xl mb-6 font-light'>
             Jiann <span className='text-primary'>Lu</span>
@@ -36,7 +36,7 @@ export default async function () {
         </div>
       </div>
 
-      <Container>
+      <Page.Container size='lg'>
         <CardGrid title='Moment'>
           {moments.slice(0, 3).map((moment) => (
             <Card.Moment
@@ -78,8 +78,7 @@ export default async function () {
             ))}
           </div>
         </CardGrid>
-
-      </Container>
+      </Page.Container>
     </Page>
   )
 }

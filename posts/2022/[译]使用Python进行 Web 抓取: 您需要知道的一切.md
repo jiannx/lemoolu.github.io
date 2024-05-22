@@ -1,5 +1,4 @@
 ---
-title: 使用Python进行Web抓取:您需要知道的一切(译)
 date: 2022-07-03
 tags: web
 ---

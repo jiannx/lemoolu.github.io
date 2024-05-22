@@ -18,10 +18,10 @@ export default async function () {
   postsOfYear.sort(x => x[0]);
 
   return (
-    <Page>
-      <CardGrid title='Blogs'>
-        {postsOfYear.map(year => {
-          return year[1].map(p =>
+    <Page size='sm'>
+      {postsOfYear.map(year => (
+        <CardGrid title={year[0] as any}>
+          {year[1].map(p => (
             <Card.Blog
               key={p.hash}
               title={p.title}
@@ -29,9 +29,9 @@ export default async function () {
               data={p.date}
               href={`/blog/${p.hash}`}
             />
-          );
-        })}
-      </CardGrid>
+          ))}
+        </CardGrid>
+      ))}
     </Page>
   )
 }

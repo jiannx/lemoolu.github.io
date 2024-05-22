@@ -27,9 +27,7 @@ export default function Header() {
   // }, [isTop, w]);
 
   return (
-    <nav
-      className={'navbar px-4 z-10 absolute top-0 h-16 min-h-14 pc:px-10'}
-    >
+    <nav className={'navbar px-4 z-10 absolute top-0 h-16 min-h-14 pc:px-10'}>
       <div className="flex-1">
         <Link href="/">
           <motion.div

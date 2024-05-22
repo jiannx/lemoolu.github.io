@@ -1,20 +1,19 @@
 import React from "react";
-import Container from '../../Container';
-import { IconDeer, Trans, Link, Copy } from '@/components';
+import { IconDeer, Trans, Link, Page } from '@/components';
 import { IconCurrentLocation, IconBrandWechat, IconMail, IconBrandWhatsapp, IconBrandX } from '@tabler/icons-react';
 
 export default function Bottom() {
 
   return (
-    <Container className="bg-base-200 mt-24">
+    <Page.Container className="bg-base-200 mt-24">
       <footer className="footer footer-center p-10">
         <aside>
           <div className="w-24 h-24 rounded-full bg-base-content flex justify-center items-center m-8">
             <IconDeer className="w-16 h-16 text-base-100" />
           </div>
-          {/* <p className="font-bold">
-            ACME Industries Ltd. <br />Providing reliable tech since 1992
-          </p> */}
+          <p className="font-bold">
+            Designed by Jiann Lu
+          </p>
           <p>Copyright © 2024 - All right reserved</p>
         </aside>
         {/* <nav>
@@ -25,6 +24,6 @@ export default function Bottom() {
           </div>
         </nav> */}
       </footer>
-    </Container>
+    </Page.Container>
   );
 }
