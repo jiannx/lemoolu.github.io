@@ -46,8 +46,8 @@ export async function postsGetList(postsNum?: number): Promise<Post[]> {
     // 标题，日期，标签，正文
     const { data: { title, date, tags, description }, content } = matter(source);
     posts.push({
-      // hash: crypto.createHash('md5').update(file).digest('hex') + '-' +filename,
-      hash: encodeURIComponent(filename),
+      hash: crypto.createHash('md5').update(filename).digest('hex'),
+      // hash: encodeURIComponent(filename), // next 存在bug，会再次进行 encodeURIComponent
       title: title || filename,
       description: description || '',
       content: content || '',
