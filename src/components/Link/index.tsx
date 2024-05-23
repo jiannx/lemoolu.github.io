@@ -1,7 +1,4 @@
-"use client"
 import Link from 'next/link'
-import { motion } from 'framer-motion';
-
 
 export default function ({
   href,
@@ -9,13 +6,12 @@ export default function ({
   ...others
 }: any) {
   const child = (
-    <motion.a
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
+    <a
+      className='transition hover:scale-105'
       {...others}
     >
       {children}
-    </motion.a>
+    </a>
   );
   if (href) {
     return (

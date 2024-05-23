@@ -68,11 +68,6 @@ function getToc(str: string) {
 export default function MarkdownRender({ children }: any) {
   // const toc = getToc(children);
 
-
-  useEffect(() => {
-    // 
-  }, []);
-
   useEffect(() => {
     // // removeNode('github-css');
     // loadCss(`/css/github/github-markdown-${colorMode}.css`, 'github-css');
