@@ -4,10 +4,10 @@ import { IconBrandWechat, IconBrandX, IconCurrentLocation, IconMail } from "@tab
 export default function () {
   return (
     <Page size='lg'>
-      <div className="rounded-2xl overflow-hidden shadow-xl mt-24 flex flex-row border border-secondary-content">
-        <div className="w-1/3 h-100 bg-[url('/images/aboutbg.jpg')] bg-cover">
+      <div className="rounded-2xl overflow-hidden shadow-xl mt-12 flex flex-col pc:flex-row border border-secondary-content">
+        <div className="w-0 h-100 bg-[url('/images/aboutbg.jpg')] bg-cover pc:w-1/3">
         </div>
-        <div className="w-2/3 max-w-600 p-12 prose">
+        <div className="w-full max-w-600 p-12 prose pc:w-2/3">
           <h2>Jiann Lu</h2>
           <p>
             Ten years of full-stack Engineer, Focus on Internet product design and development

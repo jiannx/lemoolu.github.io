@@ -1,7 +1,7 @@
-"use client"
 import * as React from 'react';
 import { ThemeProvider } from 'next-themes'
 import '@/styles/globals.css';
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 
 export default function RootLayout({
@@ -15,6 +15,7 @@ export default function RootLayout({
         <ThemeProvider>
           {children}
         </ThemeProvider>
+        <GoogleAnalytics gaId="G-E7F7XTH2Y0" />
       </body>
     </html>
   )

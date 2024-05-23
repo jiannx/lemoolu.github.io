@@ -82,7 +82,7 @@ export default function MarkdownRender({ children }: any) {
   }, []);
 
   return (
-    <article className="markdown-body prose w-full max-w-full" style={{ background: 'none' }}>
+    <article className="markdown markdown-body prose w-full max-w-full" style={{ background: 'none' }}>
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
       // components={MdComponents}
