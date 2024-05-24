@@ -26,7 +26,7 @@ export default function Header({ }: {}) {
   }, []);
 
   return (
-    <nav className={classNames('navbar px-4 z-10 fixed top-0 h-16 min-h-14 pc:px-10 transition-all', { glass: !isTop })}>
+    <nav className={classNames('navbar px-4 z-10 fixed top-0 h-16 min-h-14 pc:px-10 transition-all duration-500', { glass: !isTop })}>
       <div className="flex-1">
         <Link href="/">
           <IconDeer className='w-8 h-8 text-primary' />
