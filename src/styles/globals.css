@@ -43,3 +43,7 @@ body {
     font-size: 2rem;
   }
 }
+
+.glass {
+  background-image: none;
+}
