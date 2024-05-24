@@ -36,7 +36,7 @@ export default function () {
                 <IconBrandWhatsapp stroke={1} />
               </Link> */}
             <div className="tooltip" data-tip="Click to open">
-              <Link href="https://twitter.com/LemooLu" target="_blank">
+              <Link href="https://x.com/jiann_lu" target="_blank">
                 <IconBrandX stroke={1} />
               </Link>
             </div>

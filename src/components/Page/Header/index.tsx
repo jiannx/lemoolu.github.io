@@ -1,39 +1,35 @@
 "use client"
 import { IconDeer, } from '@/components';
-import { motion } from 'framer-motion'
 import { DarkSwitch } from '@/components';
 import Link from '../../Link';
 import { IconMenu2 } from '@tabler/icons-react'
-// import { useEffect, useState } from 'react';
-// import classNames from 'classnames';
+import { useEffect, useState } from 'react';
+import classNames from 'classnames';
 
 
-export default function Header({}: {}) {
-  // const w = typeof window !== 'undefined' ? window : null;
-  // const [isTop, setIsTop] = useState(w ? w?.document.documentElement.scrollTop === 0 : true);
+export default function Header({ }: {}) {
+  const [isTop, setIsTop] = useState(true);
 
-  // useEffect(() => {
-  //   const event = () => {
-  //     if (window?.document.documentElement.scrollTop > 0) {
-  //       setIsTop(false);
-  //     } else if (window?.document.documentElement.scrollTop === 0) {
-  //       setIsTop(true);
-  //     }
-  //   }
-  //   window?.addEventListener('scroll', event);
-  //   return () => {
-  //     window?.removeEventListener('scroll', event);
-  //   };
-  // }, [isTop, w]);
+  useEffect(() => {
+    const event = () => {
+      if (window?.document.documentElement.scrollTop > 0) {
+        setIsTop(false);
+      } else if (window?.document.documentElement.scrollTop === 0) {
+        setIsTop(true);
+      }
+    }
+    event();
+    window?.addEventListener('scroll', event);
+    return () => {
+      window?.removeEventListener('scroll', event);
+    };
+  }, []);
 
   return (
-    <nav className={'navbar px-4 z-10 absolute top-0 h-16 min-h-14 pc:px-10'}>
+    <nav className={classNames('navbar px-4 z-10 fixed top-0 h-16 min-h-14 pc:px-10 transition-all', { glass: !isTop })}>
       <div className="flex-1">
         <Link href="/">
-          <motion.div
-            whileHover={{ scale: 1.05, borderColor: 'lightGray' }}>
-            <IconDeer className='w-8 h-8 text-primary' />
-          </motion.div>
+          <IconDeer className='w-8 h-8 text-primary' />
         </Link>
       </div>
 

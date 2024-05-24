@@ -1,4 +1,3 @@
-import { initReactI18next } from 'react-i18next';
 import i18n from 'i18next';
 import enUS from './locals/en-US.js';
 import zhCN from './locals/zh-CN.js';
