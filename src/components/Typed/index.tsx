@@ -2,7 +2,7 @@
 import React from 'react';
 import Typed from 'typed.js';
 
-export default function _Typed({ strings }: {
+export default function TypedComponent({ strings }: {
   strings: string[]
 }) {
   // Create reference to store the DOM element containing the animation
