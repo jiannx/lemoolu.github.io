@@ -1,7 +1,7 @@
 ---
+title: 如何优雅的写CSS
 date: 2021-03-23
 tags: web
-description: 介绍前端写css的几种方式，针对各种场景的实现方式
 ---
 
 ## 引言
